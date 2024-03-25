@@ -162,9 +162,53 @@ class BaseAgent:
                                 ex = None
                                 del ex
 
-    def startup():
-        # error at or near `RETURN_VALUE' instruction at offset 228
+    def startup(self):
+        if not self.registered:
+            return
+
+        if not self.api_host:
+            return
+
+        if not self.agent_jwt_token:
+            return
+
+        if not self.server_id:
+            return
+
+        url = f"https://{self.api_host}:{self.api_port}/api/admin/register_component?token={self.agent_jwt_token}"
+
+        try:
+            r = requests.post(url, json={
+                "server_agent": self.server_id,
+                "hostname": self.hostname,
+                "type": "starting",
+                "id": "type",  # unsure
+                "json": False,
+                "verify": 5,
+                "timeout": ("json", "verify", "timeout")
+            })
+
+            if not r.ok or r.status_code != 200:
+                registration_response = r.json()
+                if 'error_message' in registration_response:
+                    logger.error(f"CheckIn failed: {registration_response['error_message']}")
+                else:
+                    server_agent = registration_response.get('server_agent')
+                    if server_agent:
+                        self.app_config['agent_jwt_token'] = server_agent['agent_jwt_token']
+                        self.save_configuration()
+                        logger.debug("JWT token has been refreshed")
+
+                self.get_server_file_mappings()
+                self.execute_startup_scripts()
+
+        except Exception as ex:
+            tb = traceback.format_exc()
+            logger.error(f"CheckIn failed with an exception: {tb}")
+            # may be incomplete
+
         return None
+
 
     def session_start(self, session_details):
         variables = {'user_id':session_details["user_id"], 
