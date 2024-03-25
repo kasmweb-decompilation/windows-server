@@ -1,0 +1,3213 @@
+base.pyc (Python 3.8)
+[Code]
+    File Name: agents\base.py
+    Object Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Locals: 0
+    Stack Size: 3
+    Flags: 0x00000040 (CO_NOFREE)
+    [Names]
+        'os'
+        'yaml'
+        'requests'
+        'traceback'
+        'socket'
+        'json'
+        'threading'
+        'time'
+        'sleep'
+        'abc'
+        'abstractmethod'
+        'BaseAgent'
+    [Var Names]
+    [Free Vars]
+    [Cell Vars]
+    [Constants]
+        0
+        None
+        (
+            'sleep'
+        )
+        (
+            'abstractmethod'
+        )
+        [Code]
+            File Name: agents\base.py
+            Object Name: BaseAgent
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Locals: 0
+            Stack Size: 3
+            Flags: 0x00000040 (CO_NOFREE)
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__init__'
+                'property'
+                'port'
+                'ssl'
+                'default_upload_dir'
+                'default_download_dir'
+                'is_multi_user'
+                'is_user_sso'
+                'server_id'
+                'log_file'
+                'api_host'
+                'api_port'
+                'registered'
+                'agent_jwt_token'
+                'server_public_key'
+                'server_private_key'
+                'script_path'
+                'hostname'
+                'debug'
+                'save_configuration'
+                'load_configuration'
+                'ready'
+                'startup'
+                'session_start'
+                'session_end'
+                'set_session_state'
+                'execute_startup_scripts'
+                'abstractmethod'
+                'execute_script'
+                'get_server_file_mappings'
+                'process_file_mapping'
+                'get_user_downloads_dir'
+                'screenshot'
+                'launch_application_as_user'
+                'replace_path_variables'
+                'delayed_screenshot'
+                'clean_file_mapping'
+                'register'
+            [Var Names]
+            [Free Vars]
+            [Cell Vars]
+            [Constants]
+                'BaseAgent'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: __init__
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 3
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'config_file'
+                        'logger'
+                        'request_timeout'
+                        'load_configuration'
+                    [Var Names]
+                        'self'
+                        'config_file'
+                        'logger'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        5
+                    [Disassembly]
+                        0       LOAD_FAST                       1: config_file
+                        2       LOAD_FAST                       0: self
+                        4       STORE_ATTR                      0: config_file
+                        6       LOAD_FAST                       2: logger
+                        8       LOAD_FAST                       0: self
+                        10      STORE_ATTR                      1: logger
+                        12      LOAD_CONST                      1: 5
+                        14      LOAD_FAST                       0: self
+                        16      STORE_ATTR                      2: request_timeout
+                        18      LOAD_FAST                       0: self
+                        20      LOAD_METHOD                     3: load_configuration
+                        22      CALL_METHOD                     0
+                        24      POP_TOP                         
+                        26      LOAD_CONST                      0: None
+                        28      RETURN_VALUE                    
+                'BaseAgent.__init__'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: port
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'port'
+                        4902
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'port'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'port'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: 4902
+                        22      RETURN_VALUE                    
+                'BaseAgent.port'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: ssl
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'ssl'
+                        True
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'ssl'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'ssl'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: True
+                        22      RETURN_VALUE                    
+                'BaseAgent.ssl'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: default_upload_dir
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'upload_dir'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'upload_dir'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'upload_dir'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.default_upload_dir'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: default_download_dir
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'download_dir'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'download_dir'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'download_dir'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.default_download_dir'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: is_multi_user
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'multi_user'
+                        False
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'multi_user'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'multi_user'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: False
+                        22      RETURN_VALUE                    
+                'BaseAgent.is_multi_user'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: is_user_sso
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'user_sso'
+                        False
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'user_sso'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'user_sso'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: False
+                        22      RETURN_VALUE                    
+                'BaseAgent.is_user_sso'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: server_id
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'server_id'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'server_id'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'server_id'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.server_id'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: log_file
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'log_file'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'log_file'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'log_file'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.log_file'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: api_host
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'api_host'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'api_host'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'api_host'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.api_host'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: api_port
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'api_port'
+                        443
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'api_port'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'api_port'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: 443
+                        22      RETURN_VALUE                    
+                'BaseAgent.api_port'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: registered
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'registered'
+                        False
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'registered'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'registered'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: False
+                        22      RETURN_VALUE                    
+                'BaseAgent.registered'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: agent_jwt_token
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'agent_jwt_token'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'agent_jwt_token'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'agent_jwt_token'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.agent_jwt_token'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: server_public_key
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'server_public_key'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'server_public_key'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'server_public_key'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.server_public_key'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: server_private_key
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'server_private_key'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'server_private_key'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'server_private_key'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.server_private_key'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: script_path
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'script_path'
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'script_path'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'script_path'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      0: None
+                        22      RETURN_VALUE                    
+                'BaseAgent.script_path'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: hostname
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 2
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'socket'
+                        'getfqdn'
+                        'Exception'
+                        'logger'
+                        'error'
+                    [Var Names]
+                        'self'
+                        'ex'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'Exception getting fqdn of server: '
+                    [Disassembly]
+                        0       SETUP_FINALLY                   10 (to 12)
+                        2       LOAD_GLOBAL                     0: socket
+                        4       LOAD_METHOD                     1: getfqdn
+                        6       CALL_METHOD                     0
+                        8       POP_BLOCK                       
+                        10      RETURN_VALUE                    
+                        12      DUP_TOP                         
+                        14      LOAD_GLOBAL                     2: Exception
+                        16      COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        18      POP_JUMP_IF_FALSE               62
+                        20      POP_TOP                         
+                        22      STORE_FAST                      1: ex
+                        24      POP_TOP                         
+                        26      SETUP_FINALLY                   22 (to 50)
+                        28      LOAD_FAST                       0: self
+                        30      LOAD_ATTR                       3: logger
+                        32      LOAD_METHOD                     4: error
+                        34      LOAD_CONST                      1: 'Exception getting fqdn of server: '
+                        36      LOAD_FAST                       1: ex
+                        38      FORMAT_VALUE                    0
+                        40      BUILD_STRING                    2
+                        42      CALL_METHOD                     1
+                        44      POP_TOP                         
+                        46      POP_BLOCK                       
+                        48      BEGIN_FINALLY                   
+                        50      LOAD_CONST                      0: None
+                        52      STORE_FAST                      1: ex
+                        54      DELETE_FAST                     1: ex
+                        56      END_FINALLY                     
+                        58      POP_EXCEPT                      
+                        60      JUMP_FORWARD                    2 (to 64)
+                        62      END_FINALLY                     
+                        64      LOAD_CONST                      0: None
+                        66      RETURN_VALUE                    
+                'BaseAgent.hostname'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: debug
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 1
+                    Stack Size: 2
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'app_config'
+                    [Var Names]
+                        'self'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'debug'
+                        False
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'debug'
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       0: app_config
+                        6       COMPARE_OP                      6 (in)
+                        8       POP_JUMP_IF_FALSE               20
+                        10      LOAD_FAST                       0: self
+                        12      LOAD_ATTR                       0: app_config
+                        14      LOAD_CONST                      1: 'debug'
+                        16      BINARY_SUBSCR                   
+                        18      RETURN_VALUE                    
+                        20      LOAD_CONST                      2: False
+                        22      RETURN_VALUE                    
+                'BaseAgent.debug'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: save_configuration
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 2
+                    Stack Size: 9
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'open'
+                        'config_file'
+                        'write'
+                        'yaml'
+                        'dump'
+                        'app_config'
+                        'logger'
+                        'debug'
+                    [Var Names]
+                        'self'
+                        'f_yaml_config'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'w'
+                        False
+                        (
+                            'default_flow_style'
+                        )
+                        'The configuration has been saved.'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: open
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       1: config_file
+                        6       LOAD_CONST                      1: 'w'
+                        8       CALL_FUNCTION                   2
+                        10      SETUP_WITH                      28 (to 40)
+                        12      STORE_FAST                      1: f_yaml_config
+                        14      LOAD_FAST                       1: f_yaml_config
+                        16      LOAD_METHOD                     2: write
+                        18      LOAD_GLOBAL                     3: yaml
+                        20      LOAD_ATTR                       4: dump
+                        22      LOAD_FAST                       0: self
+                        24      LOAD_ATTR                       5: app_config
+                        26      LOAD_CONST                      2: False
+                        28      LOAD_CONST                      3: ('default_flow_style',)
+                        30      CALL_FUNCTION_KW                2
+                        32      CALL_METHOD                     1
+                        34      POP_TOP                         
+                        36      POP_BLOCK                       
+                        38      BEGIN_FINALLY                   
+                        40      WITH_CLEANUP_START              
+                        42      WITH_CLEANUP_FINISH             
+                        44      END_FINALLY                     
+                        46      LOAD_FAST                       0: self
+                        48      LOAD_ATTR                       6: logger
+                        50      LOAD_METHOD                     7: debug
+                        52      LOAD_CONST                      4: 'The configuration has been saved.'
+                        54      CALL_METHOD                     1
+                        56      POP_TOP                         
+                        58      LOAD_CONST                      0: None
+                        60      RETURN_VALUE                    
+                'BaseAgent.save_configuration'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: load_configuration
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 3
+                    Stack Size: 9
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'open'
+                        'config_file'
+                        'yaml'
+                        'safe_load'
+                        'app_config'
+                        'os'
+                        'path'
+                        'isfile'
+                        'read'
+                        'public_key'
+                        'logger'
+                        'warn'
+                    [Var Names]
+                        'self'
+                        'f_config_file'
+                        'file'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'r'
+                        'jwt_public_key'
+                        'rb'
+                        'The jwt_public_key file is not defined or does not exist.'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: open
+                        2       LOAD_FAST                       0: self
+                        4       LOAD_ATTR                       1: config_file
+                        6       LOAD_CONST                      1: 'r'
+                        8       CALL_FUNCTION                   2
+                        10      SETUP_WITH                      18 (to 30)
+                        12      STORE_FAST                      1: f_config_file
+                        14      LOAD_GLOBAL                     2: yaml
+                        16      LOAD_METHOD                     3: safe_load
+                        18      LOAD_FAST                       1: f_config_file
+                        20      CALL_METHOD                     1
+                        22      LOAD_FAST                       0: self
+                        24      STORE_ATTR                      4: app_config
+                        26      POP_BLOCK                       
+                        28      BEGIN_FINALLY                   
+                        30      WITH_CLEANUP_START              
+                        32      WITH_CLEANUP_FINISH             
+                        34      END_FINALLY                     
+                        36      LOAD_CONST                      2: 'jwt_public_key'
+                        38      LOAD_FAST                       0: self
+                        40      LOAD_ATTR                       4: app_config
+                        42      COMPARE_OP                      6 (in)
+                        44      POP_JUMP_IF_FALSE               114
+                        46      LOAD_FAST                       0: self
+                        48      LOAD_ATTR                       4: app_config
+                        50      LOAD_CONST                      2: 'jwt_public_key'
+                        52      BINARY_SUBSCR                   
+                        54      POP_JUMP_IF_FALSE               114
+                        56      LOAD_GLOBAL                     5: os
+                        58      LOAD_ATTR                       6: path
+                        60      LOAD_METHOD                     7: isfile
+                        62      LOAD_FAST                       0: self
+                        64      LOAD_ATTR                       4: app_config
+                        66      LOAD_CONST                      2: 'jwt_public_key'
+                        68      BINARY_SUBSCR                   
+                        70      CALL_METHOD                     1
+                        72      POP_JUMP_IF_FALSE               114
+                        74      LOAD_GLOBAL                     0: open
+                        76      LOAD_FAST                       0: self
+                        78      LOAD_ATTR                       4: app_config
+                        80      LOAD_CONST                      2: 'jwt_public_key'
+                        82      BINARY_SUBSCR                   
+                        84      LOAD_CONST                      3: 'rb'
+                        86      CALL_FUNCTION                   2
+                        88      SETUP_WITH                      16 (to 106)
+                        90      STORE_FAST                      2: file
+                        92      LOAD_FAST                       2: file
+                        94      LOAD_METHOD                     8: read
+                        96      CALL_METHOD                     0
+                        98      LOAD_FAST                       0: self
+                        100     STORE_ATTR                      9: public_key
+                        102     POP_BLOCK                       
+                        104     BEGIN_FINALLY                   
+                        106     WITH_CLEANUP_START              
+                        108     WITH_CLEANUP_FINISH             
+                        110     END_FINALLY                     
+                        112     JUMP_FORWARD                    12 (to 126)
+                        114     LOAD_FAST                       0: self
+                        116     LOAD_ATTR                       10: logger
+                        118     LOAD_METHOD                     11: warn
+                        120     LOAD_CONST                      4: 'The jwt_public_key file is not defined or does not exist.'
+                        122     CALL_METHOD                     1
+                        124     POP_TOP                         
+                        126     LOAD_CONST                      0: None
+                        128     RETURN_VALUE                    
+                'BaseAgent.load_configuration'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: ready
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 6
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'sleep'
+                        'registered'
+                        'api_host'
+                        'agent_jwt_token'
+                        'server_id'
+                        'api_port'
+                        'requests'
+                        'post'
+                        'hostname'
+                        'ok'
+                        'status_code'
+                        'json'
+                        'logger'
+                        'error'
+                        'debug'
+                        'warning'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                    [Var Names]
+                        'self'
+                        'url'
+                        'r'
+                        'registration_response'
+                        'ex'
+                        'tb'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        5
+                        'https://'
+                        ':'
+                        '/api/admin/register_component?token='
+                        'server_agent'
+                        'running'
+                        (
+                            'id'
+                            'type'
+                            'hostname'
+                            'service_status'
+                        )
+                        (
+                            'type'
+                            'target_component'
+                        )
+                        False
+                        (
+                            'json'
+                            'verify'
+                            'timeout'
+                        )
+                        200
+                        'error_message'
+                        'CheckIn failed: '
+                        'Service registered as running.'
+                        'CheckIn Failed: Invalid response from server.'
+                        'Workspaces server responded with status code '
+                        'CheckIn failed with an exception: '
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: sleep
+                        2       LOAD_CONST                      1: 5
+                        4       CALL_FUNCTION                   1
+                        6       POP_TOP                         
+                        8       LOAD_FAST                       0: self
+                        10      LOAD_ATTR                       1: registered
+                        12      POP_JUMP_IF_FALSE               288
+                        16      LOAD_FAST                       0: self
+                        18      LOAD_ATTR                       2: api_host
+                        20      POP_JUMP_IF_FALSE               288
+                        24      LOAD_FAST                       0: self
+                        26      LOAD_ATTR                       3: agent_jwt_token
+                        28      POP_JUMP_IF_FALSE               288
+                        32      LOAD_FAST                       0: self
+                        34      LOAD_ATTR                       4: server_id
+                        36      POP_JUMP_IF_FALSE               288
+                        40      LOAD_CONST                      2: 'https://'
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_ATTR                       2: api_host
+                        46      FORMAT_VALUE                    0
+                        48      LOAD_CONST                      3: ':'
+                        50      LOAD_FAST                       0: self
+                        52      LOAD_ATTR                       5: api_port
+                        54      FORMAT_VALUE                    0
+                        56      LOAD_CONST                      4: '/api/admin/register_component?token='
+                        58      LOAD_FAST                       0: self
+                        60      LOAD_ATTR                       3: agent_jwt_token
+                        62      FORMAT_VALUE                    0
+                        64      BUILD_STRING                    6
+                        66      STORE_FAST                      1: url
+                        68      SETUP_FINALLY                   156 (to 226)
+                        70      LOAD_GLOBAL                     6: requests
+                        72      LOAD_ATTR                       7: post
+                        74      LOAD_FAST                       1: url
+                        76      LOAD_CONST                      5: 'server_agent'
+                        78      LOAD_FAST                       0: self
+                        80      LOAD_ATTR                       4: server_id
+                        82      LOAD_CONST                      5: 'server_agent'
+                        84      LOAD_FAST                       0: self
+                        86      LOAD_ATTR                       8: hostname
+                        88      FORMAT_VALUE                    0
+                        90      LOAD_CONST                      6: 'running'
+                        92      LOAD_CONST                      7: ('id', 'type', 'hostname', 'service_status')
+                        94      BUILD_CONST_KEY_MAP             4
+                        96      LOAD_CONST                      8: ('type', 'target_component')
+                        98      BUILD_CONST_KEY_MAP             2
+                        100     LOAD_CONST                      9: False
+                        102     LOAD_CONST                      1: 5
+                        104     LOAD_CONST                      10: ('json', 'verify', 'timeout')
+                        106     CALL_FUNCTION_KW                4
+                        108     STORE_FAST                      2: r
+                        110     LOAD_FAST                       2: r
+                        112     LOAD_ATTR                       9: ok
+                        114     POP_JUMP_IF_FALSE               202
+                        116     LOAD_FAST                       2: r
+                        118     LOAD_ATTR                       10: status_code
+                        120     LOAD_CONST                      11: 200
+                        122     COMPARE_OP                      2 (==)
+                        124     POP_JUMP_IF_FALSE               202
+                        126     LOAD_FAST                       2: r
+                        128     LOAD_METHOD                     11: json
+                        130     CALL_METHOD                     0
+                        132     STORE_FAST                      3: registration_response
+                        134     LOAD_CONST                      12: 'error_message'
+                        136     LOAD_FAST                       3: registration_response
+                        138     COMPARE_OP                      6 (in)
+                        140     POP_JUMP_IF_FALSE               166
+                        142     LOAD_FAST                       0: self
+                        144     LOAD_ATTR                       12: logger
+                        146     LOAD_METHOD                     13: error
+                        148     LOAD_CONST                      13: 'CheckIn failed: '
+                        150     LOAD_FAST                       3: registration_response
+                        152     LOAD_CONST                      12: 'error_message'
+                        154     BINARY_SUBSCR                   
+                        156     FORMAT_VALUE                    0
+                        158     BUILD_STRING                    2
+                        160     CALL_METHOD                     1
+                        162     POP_TOP                         
+                        164     JUMP_ABSOLUTE                   222
+                        166     LOAD_CONST                      5: 'server_agent'
+                        168     LOAD_FAST                       3: registration_response
+                        170     COMPARE_OP                      6 (in)
+                        172     POP_JUMP_IF_FALSE               188
+                        174     LOAD_FAST                       0: self
+                        176     LOAD_ATTR                       12: logger
+                        178     LOAD_METHOD                     14: debug
+                        180     LOAD_CONST                      14: 'Service registered as running.'
+                        182     CALL_METHOD                     1
+                        184     POP_TOP                         
+                        186     JUMP_ABSOLUTE                   222
+                        188     LOAD_FAST                       0: self
+                        190     LOAD_ATTR                       12: logger
+                        192     LOAD_METHOD                     13: error
+                        194     LOAD_CONST                      15: 'CheckIn Failed: Invalid response from server.'
+                        196     CALL_METHOD                     1
+                        198     POP_TOP                         
+                        200     JUMP_FORWARD                    20 (to 222)
+                        202     LOAD_FAST                       0: self
+                        204     LOAD_ATTR                       12: logger
+                        206     LOAD_METHOD                     15: warning
+                        208     LOAD_CONST                      16: 'Workspaces server responded with status code '
+                        210     LOAD_FAST                       2: r
+                        212     LOAD_ATTR                       10: status_code
+                        214     FORMAT_VALUE                    0
+                        216     BUILD_STRING                    2
+                        218     CALL_METHOD                     1
+                        220     POP_TOP                         
+                        222     POP_BLOCK                       
+                        224     JUMP_FORWARD                    62 (to 288)
+                        226     DUP_TOP                         
+                        228     LOAD_GLOBAL                     16: Exception
+                        230     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        232     POP_JUMP_IF_FALSE               286
+                        236     POP_TOP                         
+                        238     STORE_FAST                      4: ex
+                        240     POP_TOP                         
+                        242     SETUP_FINALLY                   30 (to 274)
+                        244     LOAD_GLOBAL                     17: traceback
+                        246     LOAD_METHOD                     18: format_exc
+                        248     CALL_METHOD                     0
+                        250     STORE_FAST                      5: tb
+                        252     LOAD_FAST                       0: self
+                        254     LOAD_ATTR                       12: logger
+                        256     LOAD_METHOD                     13: error
+                        258     LOAD_CONST                      17: 'CheckIn failed with an exception: '
+                        260     LOAD_FAST                       5: tb
+                        262     FORMAT_VALUE                    0
+                        264     BUILD_STRING                    2
+                        266     CALL_METHOD                     1
+                        268     POP_TOP                         
+                        270     POP_BLOCK                       
+                        272     BEGIN_FINALLY                   
+                        274     LOAD_CONST                      0: None
+                        276     STORE_FAST                      4: ex
+                        278     DELETE_FAST                     4: ex
+                        280     END_FINALLY                     
+                        282     POP_EXCEPT                      
+                        284     JUMP_FORWARD                    2 (to 288)
+                        286     END_FINALLY                     
+                        288     LOAD_CONST                      0: None
+                        290     RETURN_VALUE                    
+                'BaseAgent.ready'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: startup
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 7
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'registered'
+                        'api_host'
+                        'agent_jwt_token'
+                        'server_id'
+                        'api_port'
+                        'requests'
+                        'post'
+                        'hostname'
+                        'ok'
+                        'status_code'
+                        'json'
+                        'logger'
+                        'error'
+                        'app_config'
+                        'save_configuration'
+                        'debug'
+                        'get_server_file_mappings'
+                        'execute_startup_scripts'
+                        'warning'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                    [Var Names]
+                        'self'
+                        'url'
+                        'r'
+                        'registration_response'
+                        'server_agent'
+                        'ex'
+                        'tb'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'https://'
+                        ':'
+                        '/api/admin/register_component?token='
+                        'server_agent'
+                        'starting'
+                        (
+                            'id'
+                            'type'
+                            'hostname'
+                            'service_status'
+                        )
+                        (
+                            'type'
+                            'target_component'
+                        )
+                        False
+                        5
+                        (
+                            'json'
+                            'verify'
+                            'timeout'
+                        )
+                        200
+                        'error_message'
+                        'CheckIn failed: '
+                        'agent_jwt_token'
+                        'JWT token has been refreshed.'
+                        True
+                        'CheckIn Failed: Invalid response from server.'
+                        'Workspaces server responded with status code '
+                        'CheckIn failed with an exception: '
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_ATTR                       0: registered
+                        4       POP_JUMP_IF_FALSE               330
+                        8       LOAD_FAST                       0: self
+                        10      LOAD_ATTR                       1: api_host
+                        12      POP_JUMP_IF_FALSE               330
+                        16      LOAD_FAST                       0: self
+                        18      LOAD_ATTR                       2: agent_jwt_token
+                        20      POP_JUMP_IF_FALSE               330
+                        24      LOAD_FAST                       0: self
+                        26      LOAD_ATTR                       3: server_id
+                        28      POP_JUMP_IF_FALSE               330
+                        32      LOAD_CONST                      1: 'https://'
+                        34      LOAD_FAST                       0: self
+                        36      LOAD_ATTR                       1: api_host
+                        38      FORMAT_VALUE                    0
+                        40      LOAD_CONST                      2: ':'
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_ATTR                       4: api_port
+                        46      FORMAT_VALUE                    0
+                        48      LOAD_CONST                      3: '/api/admin/register_component?token='
+                        50      LOAD_FAST                       0: self
+                        52      LOAD_ATTR                       2: agent_jwt_token
+                        54      FORMAT_VALUE                    0
+                        56      BUILD_STRING                    6
+                        58      STORE_FAST                      1: url
+                        60      SETUP_FINALLY                   206 (to 268)
+                        62      LOAD_GLOBAL                     5: requests
+                        64      LOAD_ATTR                       6: post
+                        66      LOAD_FAST                       1: url
+                        68      LOAD_CONST                      4: 'server_agent'
+                        70      LOAD_FAST                       0: self
+                        72      LOAD_ATTR                       3: server_id
+                        74      LOAD_CONST                      4: 'server_agent'
+                        76      LOAD_FAST                       0: self
+                        78      LOAD_ATTR                       7: hostname
+                        80      FORMAT_VALUE                    0
+                        82      LOAD_CONST                      5: 'starting'
+                        84      LOAD_CONST                      6: ('id', 'type', 'hostname', 'service_status')
+                        86      BUILD_CONST_KEY_MAP             4
+                        88      LOAD_CONST                      7: ('type', 'target_component')
+                        90      BUILD_CONST_KEY_MAP             2
+                        92      LOAD_CONST                      8: False
+                        94      LOAD_CONST                      9: 5
+                        96      LOAD_CONST                      10: ('json', 'verify', 'timeout')
+                        98      CALL_FUNCTION_KW                4
+                        100     STORE_FAST                      2: r
+                        102     LOAD_FAST                       2: r
+                        104     LOAD_ATTR                       8: ok
+                        106     POP_JUMP_IF_FALSE               244
+                        108     LOAD_FAST                       2: r
+                        110     LOAD_ATTR                       9: status_code
+                        112     LOAD_CONST                      11: 200
+                        114     COMPARE_OP                      2 (==)
+                        116     POP_JUMP_IF_FALSE               244
+                        118     LOAD_FAST                       2: r
+                        120     LOAD_METHOD                     10: json
+                        122     CALL_METHOD                     0
+                        124     STORE_FAST                      3: registration_response
+                        126     LOAD_CONST                      12: 'error_message'
+                        128     LOAD_FAST                       3: registration_response
+                        130     COMPARE_OP                      6 (in)
+                        132     POP_JUMP_IF_FALSE               158
+                        134     LOAD_FAST                       0: self
+                        136     LOAD_ATTR                       11: logger
+                        138     LOAD_METHOD                     12: error
+                        140     LOAD_CONST                      13: 'CheckIn failed: '
+                        142     LOAD_FAST                       3: registration_response
+                        144     LOAD_CONST                      12: 'error_message'
+                        146     BINARY_SUBSCR                   
+                        148     FORMAT_VALUE                    0
+                        150     BUILD_STRING                    2
+                        152     CALL_METHOD                     1
+                        154     POP_TOP                         
+                        156     JUMP_FORWARD                    84 (to 242)
+                        158     LOAD_CONST                      4: 'server_agent'
+                        160     LOAD_FAST                       3: registration_response
+                        162     COMPARE_OP                      6 (in)
+                        164     POP_JUMP_IF_FALSE               230
+                        166     LOAD_FAST                       3: registration_response
+                        168     LOAD_CONST                      4: 'server_agent'
+                        170     BINARY_SUBSCR                   
+                        172     STORE_FAST                      4: server_agent
+                        174     LOAD_FAST                       4: server_agent
+                        176     LOAD_CONST                      14: 'agent_jwt_token'
+                        178     BINARY_SUBSCR                   
+                        180     LOAD_FAST                       0: self
+                        182     LOAD_ATTR                       13: app_config
+                        184     LOAD_CONST                      14: 'agent_jwt_token'
+                        186     STORE_SUBSCR                    
+                        188     LOAD_FAST                       0: self
+                        190     LOAD_METHOD                     14: save_configuration
+                        192     CALL_METHOD                     0
+                        194     POP_TOP                         
+                        196     LOAD_FAST                       0: self
+                        198     LOAD_ATTR                       11: logger
+                        200     LOAD_METHOD                     15: debug
+                        202     LOAD_CONST                      15: 'JWT token has been refreshed.'
+                        204     CALL_METHOD                     1
+                        206     POP_TOP                         
+                        208     LOAD_FAST                       0: self
+                        210     LOAD_METHOD                     16: get_server_file_mappings
+                        212     CALL_METHOD                     0
+                        214     POP_TOP                         
+                        216     LOAD_FAST                       0: self
+                        218     LOAD_METHOD                     17: execute_startup_scripts
+                        220     CALL_METHOD                     0
+                        222     POP_TOP                         
+                        224     POP_BLOCK                       
+                        226     LOAD_CONST                      16: True
+                        228     RETURN_VALUE                    
+                        230     LOAD_FAST                       0: self
+                        232     LOAD_ATTR                       11: logger
+                        234     LOAD_METHOD                     12: error
+                        236     LOAD_CONST                      17: 'CheckIn Failed: Invalid response from server.'
+                        238     CALL_METHOD                     1
+                        240     POP_TOP                         
+                        242     JUMP_FORWARD                    20 (to 264)
+                        244     LOAD_FAST                       0: self
+                        246     LOAD_ATTR                       11: logger
+                        248     LOAD_METHOD                     18: warning
+                        250     LOAD_CONST                      18: 'Workspaces server responded with status code '
+                        252     LOAD_FAST                       2: r
+                        254     LOAD_ATTR                       9: status_code
+                        256     FORMAT_VALUE                    0
+                        258     BUILD_STRING                    2
+                        260     CALL_METHOD                     1
+                        262     POP_TOP                         
+                        264     POP_BLOCK                       
+                        266     JUMP_FORWARD                    62 (to 330)
+                        268     DUP_TOP                         
+                        270     LOAD_GLOBAL                     19: Exception
+                        272     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        274     POP_JUMP_IF_FALSE               328
+                        278     POP_TOP                         
+                        280     STORE_FAST                      5: ex
+                        282     POP_TOP                         
+                        284     SETUP_FINALLY                   30 (to 316)
+                        286     LOAD_GLOBAL                     20: traceback
+                        288     LOAD_METHOD                     21: format_exc
+                        290     CALL_METHOD                     0
+                        292     STORE_FAST                      6: tb
+                        294     LOAD_FAST                       0: self
+                        296     LOAD_ATTR                       11: logger
+                        298     LOAD_METHOD                     12: error
+                        300     LOAD_CONST                      19: 'CheckIn failed with an exception: '
+                        302     LOAD_FAST                       6: tb
+                        304     FORMAT_VALUE                    0
+                        306     BUILD_STRING                    2
+                        308     CALL_METHOD                     1
+                        310     POP_TOP                         
+                        312     POP_BLOCK                       
+                        314     BEGIN_FINALLY                   
+                        316     LOAD_CONST                      0: None
+                        318     STORE_FAST                      5: ex
+                        320     DELETE_FAST                     5: ex
+                        322     END_FINALLY                     
+                        324     POP_EXCEPT                      
+                        326     JUMP_FORWARD                    2 (to 330)
+                        328     END_FINALLY                     
+                        330     LOAD_CONST                      0: None
+                        332     RETURN_VALUE                    
+                'BaseAgent.startup'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: session_start
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 7
+                    Stack Size: 8
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'api_host'
+                        'api_port'
+                        'execute_script'
+                        'script_path'
+                        'is_user_sso'
+                        'items'
+                        'process_file_mapping'
+                        'copy'
+                        'json'
+                        'dumps'
+                        'os'
+                        'path'
+                        'isdir'
+                        'listdir'
+                        'set_session_state'
+                        'threading'
+                        'Thread'
+                        'delayed_screenshot'
+                        'start'
+                    [Var Names]
+                        'self'
+                        'session_details'
+                        'variables'
+                        'k'
+                        'v'
+                        'storage_map_vars'
+                        'filename'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'user_id'
+                        'username'
+                        'kasm_id'
+                        'jwt'
+                        'user_groups'
+                        ''
+                        (
+                            'user_id'
+                            'username'
+                            'kasm_id'
+                            'jwt_token'
+                            'user_groups'
+                            'api_host'
+                            'api_port'
+                        )
+                        'create_local_account'
+                        '\\builtin\\create_local_account.ps1'
+                        'persistent_profile'
+                        's3'
+                        '\\builtin\\load_persistent_profile.ps1'
+                        'file_mappings'
+                        'storage_mappings'
+                        'storage_mapping'
+                        '\\builtin\\map_storage.ps1'
+                        '\\session_start'
+                        '_tmp.ps1'
+                        '\\session_start\\'
+                        'running'
+                        20
+                        (
+                            'target'
+                            'args'
+                        )
+                    [Disassembly]
+                        0       LOAD_FAST                       1: session_details
+                        2       LOAD_CONST                      1: 'user_id'
+                        4       BINARY_SUBSCR                   
+                        6       LOAD_FAST                       1: session_details
+                        8       LOAD_CONST                      2: 'username'
+                        10      BINARY_SUBSCR                   
+                        12      LOAD_FAST                       1: session_details
+                        14      LOAD_CONST                      3: 'kasm_id'
+                        16      BINARY_SUBSCR                   
+                        18      LOAD_FAST                       1: session_details
+                        20      LOAD_CONST                      4: 'jwt'
+                        22      BINARY_SUBSCR                   
+                        24      LOAD_CONST                      5: 'user_groups'
+                        26      LOAD_FAST                       1: session_details
+                        28      COMPARE_OP                      6 (in)
+                        30      POP_JUMP_IF_FALSE               40
+                        32      LOAD_FAST                       1: session_details
+                        34      LOAD_CONST                      5: 'user_groups'
+                        36      BINARY_SUBSCR                   
+                        38      JUMP_FORWARD                    2 (to 42)
+                        40      LOAD_CONST                      6: ''
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_ATTR                       0: api_host
+                        46      LOAD_FAST                       0: self
+                        48      LOAD_ATTR                       1: api_port
+                        50      LOAD_CONST                      7: ('user_id', 'username', 'kasm_id', 'jwt_token', 'user_groups', 'api_host', 'api_port')
+                        52      BUILD_CONST_KEY_MAP             7
+                        54      STORE_FAST                      2: variables
+                        56      LOAD_FAST                       1: session_details
+                        58      LOAD_CONST                      8: 'create_local_account'
+                        60      BINARY_SUBSCR                   
+                        62      POP_JUMP_IF_FALSE               84
+                        64      LOAD_FAST                       0: self
+                        66      LOAD_METHOD                     2: execute_script
+                        68      LOAD_FAST                       0: self
+                        70      LOAD_ATTR                       3: script_path
+                        72      FORMAT_VALUE                    0
+                        74      LOAD_CONST                      9: '\\builtin\\create_local_account.ps1'
+                        76      BUILD_STRING                    2
+                        78      LOAD_FAST                       2: variables
+                        80      CALL_METHOD                     2
+                        82      POP_TOP                         
+                        84      LOAD_CONST                      10: 'persistent_profile'
+                        86      LOAD_FAST                       1: session_details
+                        88      COMPARE_OP                      6 (in)
+                        90      POP_JUMP_IF_FALSE               124
+                        92      LOAD_FAST                       1: session_details
+                        94      LOAD_CONST                      10: 'persistent_profile'
+                        96      BINARY_SUBSCR                   
+                        98      LOAD_CONST                      11: 's3'
+                        100     COMPARE_OP                      2 (==)
+                        102     POP_JUMP_IF_FALSE               124
+                        104     LOAD_FAST                       0: self
+                        106     LOAD_METHOD                     2: execute_script
+                        108     LOAD_FAST                       0: self
+                        110     LOAD_ATTR                       3: script_path
+                        112     FORMAT_VALUE                    0
+                        114     LOAD_CONST                      12: '\\builtin\\load_persistent_profile.ps1'
+                        116     BUILD_STRING                    2
+                        118     LOAD_FAST                       2: variables
+                        120     CALL_METHOD                     2
+                        122     POP_TOP                         
+                        124     LOAD_FAST                       0: self
+                        126     LOAD_ATTR                       4: is_user_sso
+                        128     POP_JUMP_IF_FALSE               256
+                        132     LOAD_CONST                      13: 'file_mappings'
+                        134     LOAD_FAST                       1: session_details
+                        136     COMPARE_OP                      6 (in)
+                        138     POP_JUMP_IF_FALSE               178
+                        140     LOAD_FAST                       1: session_details
+                        142     LOAD_CONST                      13: 'file_mappings'
+                        144     BINARY_SUBSCR                   
+                        146     LOAD_METHOD                     5: items
+                        148     CALL_METHOD                     0
+                        150     GET_ITER                        
+                        152     FOR_ITER                        24 (to 178)
+                        154     UNPACK_SEQUENCE                 2
+                        156     STORE_FAST                      3: k
+                        158     STORE_FAST                      4: v
+                        160     LOAD_FAST                       0: self
+                        162     LOAD_METHOD                     6: process_file_mapping
+                        164     LOAD_FAST                       4: v
+                        166     LOAD_FAST                       1: session_details
+                        168     LOAD_CONST                      2: 'username'
+                        170     BINARY_SUBSCR                   
+                        172     CALL_METHOD                     2
+                        174     POP_TOP                         
+                        176     JUMP_ABSOLUTE                   152
+                        178     LOAD_CONST                      14: 'storage_mappings'
+                        180     LOAD_FAST                       1: session_details
+                        182     COMPARE_OP                      6 (in)
+                        184     POP_JUMP_IF_FALSE               256
+                        188     LOAD_FAST                       1: session_details
+                        190     LOAD_CONST                      14: 'storage_mappings'
+                        192     BINARY_SUBSCR                   
+                        194     LOAD_METHOD                     5: items
+                        196     CALL_METHOD                     0
+                        198     GET_ITER                        
+                        200     FOR_ITER                        54 (to 256)
+                        202     UNPACK_SEQUENCE                 2
+                        204     STORE_FAST                      3: k
+                        206     STORE_FAST                      4: v
+                        208     LOAD_FAST                       2: variables
+                        210     LOAD_METHOD                     7: copy
+                        212     CALL_METHOD                     0
+                        214     STORE_FAST                      5: storage_map_vars
+                        216     LOAD_GLOBAL                     8: json
+                        218     LOAD_METHOD                     9: dumps
+                        220     LOAD_FAST                       3: k
+                        222     LOAD_FAST                       4: v
+                        224     BUILD_MAP                       1
+                        226     CALL_METHOD                     1
+                        228     LOAD_FAST                       5: storage_map_vars
+                        230     LOAD_CONST                      15: 'storage_mapping'
+                        232     STORE_SUBSCR                    
+                        234     LOAD_FAST                       0: self
+                        236     LOAD_METHOD                     2: execute_script
+                        238     LOAD_FAST                       0: self
+                        240     LOAD_ATTR                       3: script_path
+                        242     FORMAT_VALUE                    0
+                        244     LOAD_CONST                      16: '\\builtin\\map_storage.ps1'
+                        246     BUILD_STRING                    2
+                        248     LOAD_FAST                       5: storage_map_vars
+                        250     CALL_METHOD                     2
+                        252     POP_TOP                         
+                        254     JUMP_ABSOLUTE                   200
+                        256     LOAD_FAST                       0: self
+                        258     LOAD_ATTR                       3: script_path
+                        260     POP_JUMP_IF_FALSE               340
+                        264     LOAD_GLOBAL                     10: os
+                        266     LOAD_ATTR                       11: path
+                        268     LOAD_METHOD                     12: isdir
+                        270     LOAD_FAST                       0: self
+                        272     LOAD_ATTR                       3: script_path
+                        274     CALL_METHOD                     1
+                        276     POP_JUMP_IF_FALSE               340
+                        280     LOAD_GLOBAL                     10: os
+                        282     LOAD_METHOD                     13: listdir
+                        284     LOAD_FAST                       0: self
+                        286     LOAD_ATTR                       3: script_path
+                        288     FORMAT_VALUE                    0
+                        290     LOAD_CONST                      17: '\\session_start'
+                        292     BUILD_STRING                    2
+                        294     CALL_METHOD                     1
+                        296     GET_ITER                        
+                        298     FOR_ITER                        40 (to 340)
+                        300     STORE_FAST                      6: filename
+                        302     LOAD_CONST                      18: '_tmp.ps1'
+                        304     LOAD_FAST                       6: filename
+                        306     COMPARE_OP                      7 (not in)
+                        308     POP_JUMP_IF_FALSE               298
+                        312     LOAD_FAST                       0: self
+                        314     LOAD_METHOD                     2: execute_script
+                        316     LOAD_FAST                       0: self
+                        318     LOAD_ATTR                       3: script_path
+                        320     FORMAT_VALUE                    0
+                        322     LOAD_CONST                      19: '\\session_start\\'
+                        324     LOAD_FAST                       6: filename
+                        326     FORMAT_VALUE                    0
+                        328     BUILD_STRING                    3
+                        330     LOAD_FAST                       2: variables
+                        332     CALL_METHOD                     2
+                        334     POP_TOP                         
+                        336     JUMP_ABSOLUTE                   298
+                        340     LOAD_FAST                       0: self
+                        342     LOAD_METHOD                     14: set_session_state
+                        344     LOAD_FAST                       1: session_details
+                        346     LOAD_CONST                      3: 'kasm_id'
+                        348     BINARY_SUBSCR                   
+                        350     LOAD_CONST                      20: 'running'
+                        352     LOAD_FAST                       1: session_details
+                        354     LOAD_CONST                      4: 'jwt'
+                        356     BINARY_SUBSCR                   
+                        358     CALL_METHOD                     3
+                        360     POP_TOP                         
+                        362     LOAD_GLOBAL                     15: threading
+                        364     LOAD_ATTR                       16: Thread
+                        366     LOAD_FAST                       0: self
+                        368     LOAD_ATTR                       17: delayed_screenshot
+                        370     LOAD_FAST                       1: session_details
+                        372     LOAD_CONST                      2: 'username'
+                        374     BINARY_SUBSCR                   
+                        376     LOAD_CONST                      21: 20
+                        378     BUILD_TUPLE                     2
+                        380     LOAD_CONST                      22: ('target', 'args')
+                        382     CALL_FUNCTION_KW                2
+                        384     LOAD_METHOD                     18: start
+                        386     CALL_METHOD                     0
+                        388     POP_TOP                         
+                        390     LOAD_CONST                      0: None
+                        392     RETURN_VALUE                    
+                'BaseAgent.session_start'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: session_end
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 8
+                    Stack Size: 7
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'api_host'
+                        'api_port'
+                        'execute_script'
+                        'script_path'
+                        'is_user_sso'
+                        'items'
+                        'replace_path_variables'
+                        'get_user_profile_dir'
+                        'is_multi_user'
+                        'startswith'
+                        'clean_file_mapping'
+                        'logger'
+                        'debug'
+                        'copy'
+                        'json'
+                        'dumps'
+                        'os'
+                        'path'
+                        'isdir'
+                        'listdir'
+                        'set_session_state'
+                    [Var Names]
+                        'self'
+                        'session_details'
+                        'variables'
+                        'k'
+                        'v'
+                        'filename'
+                        'homepath'
+                        'storage_map_vars'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'user_id'
+                        'username'
+                        'kasm_id'
+                        'jwt'
+                        (
+                            'user_id'
+                            'username'
+                            'kasm_id'
+                            'jwt_token'
+                            'api_host'
+                            'api_port'
+                        )
+                        '\\builtin\\logoff_user.ps1'
+                        'file_mappings'
+                        'destination'
+                        'Skipping deletion of '
+                        ', from file mapping.'
+                        'storage_mappings'
+                        'storage_mapping'
+                        '\\builtin\\unmap_storage.ps1'
+                        'persistent_profile'
+                        's3'
+                        '\\builtin\\save_persistent_profile.ps1'
+                        '\\session_end'
+                        '_tmp.ps1'
+                        '\\session_end\\'
+                        'destroyed'
+                    [Disassembly]
+                        0       LOAD_FAST                       1: session_details
+                        2       LOAD_CONST                      1: 'user_id'
+                        4       BINARY_SUBSCR                   
+                        6       LOAD_FAST                       1: session_details
+                        8       LOAD_CONST                      2: 'username'
+                        10      BINARY_SUBSCR                   
+                        12      LOAD_FAST                       1: session_details
+                        14      LOAD_CONST                      3: 'kasm_id'
+                        16      BINARY_SUBSCR                   
+                        18      LOAD_FAST                       1: session_details
+                        20      LOAD_CONST                      4: 'jwt'
+                        22      BINARY_SUBSCR                   
+                        24      LOAD_FAST                       0: self
+                        26      LOAD_ATTR                       0: api_host
+                        28      LOAD_FAST                       0: self
+                        30      LOAD_ATTR                       1: api_port
+                        32      LOAD_CONST                      5: ('user_id', 'username', 'kasm_id', 'jwt_token', 'api_host', 'api_port')
+                        34      BUILD_CONST_KEY_MAP             6
+                        36      STORE_FAST                      2: variables
+                        38      LOAD_FAST                       0: self
+                        40      LOAD_METHOD                     2: execute_script
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_ATTR                       3: script_path
+                        46      FORMAT_VALUE                    0
+                        48      LOAD_CONST                      6: '\\builtin\\logoff_user.ps1'
+                        50      BUILD_STRING                    2
+                        52      LOAD_FAST                       2: variables
+                        54      CALL_METHOD                     2
+                        56      POP_TOP                         
+                        58      LOAD_FAST                       0: self
+                        60      LOAD_ATTR                       4: is_user_sso
+                        62      POP_JUMP_IF_FALSE               262
+                        66      LOAD_CONST                      7: 'file_mappings'
+                        68      LOAD_FAST                       1: session_details
+                        70      COMPARE_OP                      6 (in)
+                        72      POP_JUMP_IF_FALSE               184
+                        74      LOAD_FAST                       1: session_details
+                        76      LOAD_CONST                      7: 'file_mappings'
+                        78      BINARY_SUBSCR                   
+                        80      LOAD_METHOD                     5: items
+                        82      CALL_METHOD                     0
+                        84      GET_ITER                        
+                        86      FOR_ITER                        96 (to 184)
+                        88      UNPACK_SEQUENCE                 2
+                        90      STORE_FAST                      3: k
+                        92      STORE_FAST                      4: v
+                        94      LOAD_FAST                       0: self
+                        96      LOAD_METHOD                     6: replace_path_variables
+                        98      LOAD_FAST                       4: v
+                        100     LOAD_CONST                      8: 'destination'
+                        102     BINARY_SUBSCR                   
+                        104     LOAD_FAST                       1: session_details
+                        106     LOAD_CONST                      2: 'username'
+                        108     BINARY_SUBSCR                   
+                        110     CALL_METHOD                     2
+                        112     STORE_FAST                      5: filename
+                        114     LOAD_FAST                       0: self
+                        116     LOAD_METHOD                     7: get_user_profile_dir
+                        118     LOAD_FAST                       1: session_details
+                        120     LOAD_CONST                      2: 'username'
+                        122     BINARY_SUBSCR                   
+                        124     CALL_METHOD                     1
+                        126     STORE_FAST                      6: homepath
+                        128     LOAD_FAST                       0: self
+                        130     LOAD_ATTR                       8: is_multi_user
+                        132     POP_JUMP_IF_FALSE               144
+                        134     LOAD_FAST                       5: filename
+                        136     LOAD_METHOD                     9: startswith
+                        138     LOAD_FAST                       6: homepath
+                        140     CALL_METHOD                     1
+                        142     POP_JUMP_IF_FALSE               162
+                        144     LOAD_FAST                       0: self
+                        146     LOAD_METHOD                     10: clean_file_mapping
+                        148     LOAD_FAST                       4: v
+                        150     LOAD_FAST                       1: session_details
+                        152     LOAD_CONST                      2: 'username'
+                        154     BINARY_SUBSCR                   
+                        156     CALL_METHOD                     2
+                        158     POP_TOP                         
+                        160     JUMP_ABSOLUTE                   86
+                        162     LOAD_FAST                       0: self
+                        164     LOAD_ATTR                       11: logger
+                        166     LOAD_METHOD                     12: debug
+                        168     LOAD_CONST                      9: 'Skipping deletion of '
+                        170     LOAD_FAST                       5: filename
+                        172     FORMAT_VALUE                    0
+                        174     LOAD_CONST                      10: ', from file mapping.'
+                        176     BUILD_STRING                    3
+                        178     CALL_METHOD                     1
+                        180     POP_TOP                         
+                        182     JUMP_ABSOLUTE                   86
+                        184     LOAD_CONST                      11: 'storage_mappings'
+                        186     LOAD_FAST                       1: session_details
+                        188     COMPARE_OP                      6 (in)
+                        190     POP_JUMP_IF_FALSE               262
+                        194     LOAD_FAST                       1: session_details
+                        196     LOAD_CONST                      11: 'storage_mappings'
+                        198     BINARY_SUBSCR                   
+                        200     LOAD_METHOD                     5: items
+                        202     CALL_METHOD                     0
+                        204     GET_ITER                        
+                        206     FOR_ITER                        54 (to 262)
+                        208     UNPACK_SEQUENCE                 2
+                        210     STORE_FAST                      3: k
+                        212     STORE_FAST                      4: v
+                        214     LOAD_FAST                       2: variables
+                        216     LOAD_METHOD                     13: copy
+                        218     CALL_METHOD                     0
+                        220     STORE_FAST                      7: storage_map_vars
+                        222     LOAD_GLOBAL                     14: json
+                        224     LOAD_METHOD                     15: dumps
+                        226     LOAD_FAST                       3: k
+                        228     LOAD_FAST                       4: v
+                        230     BUILD_MAP                       1
+                        232     CALL_METHOD                     1
+                        234     LOAD_FAST                       7: storage_map_vars
+                        236     LOAD_CONST                      12: 'storage_mapping'
+                        238     STORE_SUBSCR                    
+                        240     LOAD_FAST                       0: self
+                        242     LOAD_METHOD                     2: execute_script
+                        244     LOAD_FAST                       0: self
+                        246     LOAD_ATTR                       3: script_path
+                        248     FORMAT_VALUE                    0
+                        250     LOAD_CONST                      13: '\\builtin\\unmap_storage.ps1'
+                        252     BUILD_STRING                    2
+                        254     LOAD_FAST                       7: storage_map_vars
+                        256     CALL_METHOD                     2
+                        258     POP_TOP                         
+                        260     JUMP_ABSOLUTE                   206
+                        262     LOAD_CONST                      14: 'persistent_profile'
+                        264     LOAD_FAST                       1: session_details
+                        266     COMPARE_OP                      6 (in)
+                        268     POP_JUMP_IF_FALSE               306
+                        272     LOAD_FAST                       1: session_details
+                        274     LOAD_CONST                      14: 'persistent_profile'
+                        276     BINARY_SUBSCR                   
+                        278     LOAD_CONST                      15: 's3'
+                        280     COMPARE_OP                      2 (==)
+                        282     POP_JUMP_IF_FALSE               306
+                        286     LOAD_FAST                       0: self
+                        288     LOAD_METHOD                     2: execute_script
+                        290     LOAD_FAST                       0: self
+                        292     LOAD_ATTR                       3: script_path
+                        294     FORMAT_VALUE                    0
+                        296     LOAD_CONST                      16: '\\builtin\\save_persistent_profile.ps1'
+                        298     BUILD_STRING                    2
+                        300     LOAD_FAST                       2: variables
+                        302     CALL_METHOD                     2
+                        304     POP_TOP                         
+                        306     LOAD_FAST                       0: self
+                        308     LOAD_ATTR                       3: script_path
+                        310     POP_JUMP_IF_FALSE               390
+                        314     LOAD_GLOBAL                     16: os
+                        316     LOAD_ATTR                       17: path
+                        318     LOAD_METHOD                     18: isdir
+                        320     LOAD_FAST                       0: self
+                        322     LOAD_ATTR                       3: script_path
+                        324     CALL_METHOD                     1
+                        326     POP_JUMP_IF_FALSE               390
+                        330     LOAD_GLOBAL                     16: os
+                        332     LOAD_METHOD                     19: listdir
+                        334     LOAD_FAST                       0: self
+                        336     LOAD_ATTR                       3: script_path
+                        338     FORMAT_VALUE                    0
+                        340     LOAD_CONST                      17: '\\session_end'
+                        342     BUILD_STRING                    2
+                        344     CALL_METHOD                     1
+                        346     GET_ITER                        
+                        348     FOR_ITER                        40 (to 390)
+                        350     STORE_FAST                      5: filename
+                        352     LOAD_CONST                      18: '_tmp.ps1'
+                        354     LOAD_FAST                       5: filename
+                        356     COMPARE_OP                      7 (not in)
+                        358     POP_JUMP_IF_FALSE               348
+                        362     LOAD_FAST                       0: self
+                        364     LOAD_METHOD                     2: execute_script
+                        366     LOAD_FAST                       0: self
+                        368     LOAD_ATTR                       3: script_path
+                        370     FORMAT_VALUE                    0
+                        372     LOAD_CONST                      19: '\\session_end\\'
+                        374     LOAD_FAST                       5: filename
+                        376     FORMAT_VALUE                    0
+                        378     BUILD_STRING                    3
+                        380     LOAD_FAST                       2: variables
+                        382     CALL_METHOD                     2
+                        384     POP_TOP                         
+                        386     JUMP_ABSOLUTE                   348
+                        390     LOAD_FAST                       0: self
+                        392     LOAD_METHOD                     20: set_session_state
+                        394     LOAD_FAST                       1: session_details
+                        396     LOAD_CONST                      3: 'kasm_id'
+                        398     BINARY_SUBSCR                   
+                        400     LOAD_CONST                      20: 'destroyed'
+                        402     LOAD_FAST                       1: session_details
+                        404     LOAD_CONST                      4: 'jwt'
+                        406     BINARY_SUBSCR                   
+                        408     CALL_METHOD                     3
+                        410     POP_TOP                         
+                        412     LOAD_CONST                      0: None
+                        414     RETURN_VALUE                    
+                'BaseAgent.session_end'
+                0
+                None
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: set_session_state
+                    Arg Count: 6
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 11
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'api_host'
+                        'pop'
+                        'api_port'
+                        'requests'
+                        'post'
+                        'ok'
+                        'status_code'
+                        'logger'
+                        'debug'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                        'error'
+                    [Var Names]
+                        'self'
+                        'kasm_id'
+                        'state'
+                        'jwt_token'
+                        'progress'
+                        'message'
+                        'payload'
+                        'url'
+                        'r'
+                        'ex'
+                        'tb'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        (
+                            'kasm_id'
+                            'status'
+                            'status_progress'
+                        )
+                        'status_message'
+                        'destroyed'
+                        'status'
+                        True
+                        'https://'
+                        ':'
+                        '/api/set_kasm_session_status?token='
+                        False
+                        5
+                        (
+                            'json'
+                            'verify'
+                            'timeout'
+                        )
+                        200
+                        'Successfully set status of session ('
+                        ')'
+                        'Failed to set status of session ('
+                        'File mapping failed with an exception: '
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_ATTR                       0: api_host
+                        4       POP_JUMP_IF_FALSE               224
+                        6       LOAD_FAST                       1: kasm_id
+                        8       LOAD_FAST                       2: state
+                        10      LOAD_FAST                       4: progress
+                        12      LOAD_CONST                      1: ('kasm_id', 'status', 'status_progress')
+                        14      BUILD_CONST_KEY_MAP             3
+                        16      STORE_FAST                      6: payload
+                        18      LOAD_FAST                       5: message
+                        20      POP_JUMP_IF_FALSE               30
+                        22      LOAD_FAST                       5: message
+                        24      LOAD_FAST                       6: payload
+                        26      LOAD_CONST                      2: 'status_message'
+                        28      STORE_SUBSCR                    
+                        30      LOAD_FAST                       2: state
+                        32      LOAD_CONST                      3: 'destroyed'
+                        34      COMPARE_OP                      2 (==)
+                        36      POP_JUMP_IF_FALSE               56
+                        38      LOAD_FAST                       6: payload
+                        40      LOAD_METHOD                     1: pop
+                        42      LOAD_CONST                      4: 'status'
+                        44      CALL_METHOD                     1
+                        46      POP_TOP                         
+                        48      LOAD_CONST                      5: True
+                        50      LOAD_FAST                       6: payload
+                        52      LOAD_CONST                      3: 'destroyed'
+                        54      STORE_SUBSCR                    
+                        56      LOAD_CONST                      6: 'https://'
+                        58      LOAD_FAST                       0: self
+                        60      LOAD_ATTR                       0: api_host
+                        62      FORMAT_VALUE                    0
+                        64      LOAD_CONST                      7: ':'
+                        66      LOAD_FAST                       0: self
+                        68      LOAD_ATTR                       2: api_port
+                        70      FORMAT_VALUE                    0
+                        72      LOAD_CONST                      8: '/api/set_kasm_session_status?token='
+                        74      LOAD_FAST                       3: jwt_token
+                        76      FORMAT_VALUE                    0
+                        78      BUILD_STRING                    6
+                        80      STORE_FAST                      7: url
+                        82      SETUP_FINALLY                   80 (to 164)
+                        84      LOAD_GLOBAL                     3: requests
+                        86      LOAD_ATTR                       4: post
+                        88      LOAD_FAST                       7: url
+                        90      LOAD_FAST                       6: payload
+                        92      LOAD_CONST                      9: False
+                        94      LOAD_CONST                      10: 5
+                        96      LOAD_CONST                      11: ('json', 'verify', 'timeout')
+                        98      CALL_FUNCTION_KW                4
+                        100     STORE_FAST                      8: r
+                        102     LOAD_FAST                       8: r
+                        104     LOAD_ATTR                       5: ok
+                        106     POP_JUMP_IF_FALSE               140
+                        108     LOAD_FAST                       8: r
+                        110     LOAD_ATTR                       6: status_code
+                        112     LOAD_CONST                      12: 200
+                        114     COMPARE_OP                      2 (==)
+                        116     POP_JUMP_IF_FALSE               140
+                        118     LOAD_FAST                       0: self
+                        120     LOAD_ATTR                       7: logger
+                        122     LOAD_METHOD                     8: debug
+                        124     LOAD_CONST                      13: 'Successfully set status of session ('
+                        126     LOAD_FAST                       1: kasm_id
+                        128     FORMAT_VALUE                    0
+                        130     LOAD_CONST                      14: ')'
+                        132     BUILD_STRING                    3
+                        134     CALL_METHOD                     1
+                        136     POP_TOP                         
+                        138     JUMP_FORWARD                    20 (to 160)
+                        140     LOAD_FAST                       0: self
+                        142     LOAD_ATTR                       7: logger
+                        144     LOAD_METHOD                     8: debug
+                        146     LOAD_CONST                      15: 'Failed to set status of session ('
+                        148     LOAD_FAST                       1: kasm_id
+                        150     FORMAT_VALUE                    0
+                        152     LOAD_CONST                      14: ')'
+                        154     BUILD_STRING                    3
+                        156     CALL_METHOD                     1
+                        158     POP_TOP                         
+                        160     POP_BLOCK                       
+                        162     JUMP_FORWARD                    60 (to 224)
+                        164     DUP_TOP                         
+                        166     LOAD_GLOBAL                     9: Exception
+                        168     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        170     POP_JUMP_IF_FALSE               222
+                        172     POP_TOP                         
+                        174     STORE_FAST                      9: ex
+                        176     POP_TOP                         
+                        178     SETUP_FINALLY                   30 (to 210)
+                        180     LOAD_GLOBAL                     10: traceback
+                        182     LOAD_METHOD                     11: format_exc
+                        184     CALL_METHOD                     0
+                        186     STORE_FAST                      10: tb
+                        188     LOAD_FAST                       0: self
+                        190     LOAD_ATTR                       7: logger
+                        192     LOAD_METHOD                     12: error
+                        194     LOAD_CONST                      16: 'File mapping failed with an exception: '
+                        196     LOAD_FAST                       10: tb
+                        198     FORMAT_VALUE                    0
+                        200     BUILD_STRING                    2
+                        202     CALL_METHOD                     1
+                        204     POP_TOP                         
+                        206     POP_BLOCK                       
+                        208     BEGIN_FINALLY                   
+                        210     LOAD_CONST                      0: None
+                        212     STORE_FAST                      9: ex
+                        214     DELETE_FAST                     9: ex
+                        216     END_FINALLY                     
+                        218     POP_EXCEPT                      
+                        220     JUMP_FORWARD                    2 (to 224)
+                        222     END_FINALLY                     
+                        224     LOAD_CONST                      0: None
+                        226     RETURN_VALUE                    
+                'BaseAgent.set_session_state'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: execute_startup_scripts
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 3
+                    Stack Size: 6
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'server_id'
+                        'agent_jwt_token'
+                        'api_host'
+                        'api_port'
+                        'script_path'
+                        'os'
+                        'path'
+                        'isdir'
+                        'listdir'
+                        'execute_script'
+                    [Var Names]
+                        'self'
+                        'variables'
+                        'filename'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        (
+                            'server_id'
+                            'jwt'
+                            'api_host'
+                            'api_port'
+                        )
+                        '\\service_startup'
+                        '_tmp.ps1'
+                        '\\service_startup\\'
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_ATTR                       0: server_id
+                        4       LOAD_FAST                       0: self
+                        6       LOAD_ATTR                       1: agent_jwt_token
+                        8       LOAD_FAST                       0: self
+                        10      LOAD_ATTR                       2: api_host
+                        12      LOAD_FAST                       0: self
+                        14      LOAD_ATTR                       3: api_port
+                        16      LOAD_CONST                      1: ('server_id', 'jwt', 'api_host', 'api_port')
+                        18      BUILD_CONST_KEY_MAP             4
+                        20      STORE_FAST                      1: variables
+                        22      LOAD_FAST                       0: self
+                        24      LOAD_ATTR                       4: script_path
+                        26      POP_JUMP_IF_FALSE               98
+                        28      LOAD_GLOBAL                     5: os
+                        30      LOAD_ATTR                       6: path
+                        32      LOAD_METHOD                     7: isdir
+                        34      LOAD_FAST                       0: self
+                        36      LOAD_ATTR                       4: script_path
+                        38      CALL_METHOD                     1
+                        40      POP_JUMP_IF_FALSE               98
+                        42      LOAD_GLOBAL                     5: os
+                        44      LOAD_METHOD                     8: listdir
+                        46      LOAD_FAST                       0: self
+                        48      LOAD_ATTR                       4: script_path
+                        50      FORMAT_VALUE                    0
+                        52      LOAD_CONST                      2: '\\service_startup'
+                        54      BUILD_STRING                    2
+                        56      CALL_METHOD                     1
+                        58      GET_ITER                        
+                        60      FOR_ITER                        36 (to 98)
+                        62      STORE_FAST                      2: filename
+                        64      LOAD_CONST                      3: '_tmp.ps1'
+                        66      LOAD_FAST                       2: filename
+                        68      COMPARE_OP                      7 (not in)
+                        70      POP_JUMP_IF_FALSE               60
+                        72      LOAD_FAST                       0: self
+                        74      LOAD_METHOD                     9: execute_script
+                        76      LOAD_FAST                       0: self
+                        78      LOAD_ATTR                       4: script_path
+                        80      FORMAT_VALUE                    0
+                        82      LOAD_CONST                      4: '\\service_startup\\'
+                        84      LOAD_FAST                       2: filename
+                        86      FORMAT_VALUE                    0
+                        88      BUILD_STRING                    3
+                        90      LOAD_FAST                       1: variables
+                        92      CALL_METHOD                     2
+                        94      POP_TOP                         
+                        96      JUMP_ABSOLUTE                   60
+                        98      LOAD_CONST                      0: None
+                        100     RETURN_VALUE                    
+                'BaseAgent.execute_startup_scripts'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: execute_script
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 3
+                    Stack Size: 1
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                    [Var Names]
+                        'self'
+                        'filename'
+                        'variables'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        '\n        Execute the target script, create the varables in the script prior to execution.\n        '
+                        None
+                    [Disassembly]
+                        0       LOAD_CONST                      1: None
+                        2       RETURN_VALUE                    
+                'BaseAgent.execute_script'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: get_server_file_mappings
+                    Arg Count: 1
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 10
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'agent_jwt_token'
+                        'api_host'
+                        'api_port'
+                        'requests'
+                        'get'
+                        'ok'
+                        'status_code'
+                        'json'
+                        'items'
+                        'logger'
+                        'debug'
+                        'process_file_mapping'
+                        'server_id'
+                        'dumps'
+                        'execute_script'
+                        'script_path'
+                        'error'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                    [Var Names]
+                        'self'
+                        'url'
+                        'r'
+                        'response'
+                        'k'
+                        'v'
+                        'file_map'
+                        'variables'
+                        'ex'
+                        'tb'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'https://'
+                        ':'
+                        '/api/admin/get_server_file_mappings?token='
+                        False
+                        5
+                        (
+                            'verify'
+                            'timeout'
+                        )
+                        200
+                        'file_mappings'
+                        'Processing file mapping '
+                        (
+                            'user_name'
+                        )
+                        'storage_mappings'
+                        'Proccessing storage mapping '
+                        (
+                            'server_id'
+                            'jwt'
+                            'api_host'
+                            'api_port'
+                            'storage_mapping'
+                        )
+                        '\\builtin\\map_storage.ps1'
+                        'Retrieval of file mappings failed with status code: '
+                        'File mapping failed with an exception: '
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_ATTR                       0: agent_jwt_token
+                        4       POP_JUMP_IF_FALSE               338
+                        8       LOAD_FAST                       0: self
+                        10      LOAD_ATTR                       1: api_host
+                        12      POP_JUMP_IF_FALSE               338
+                        16      LOAD_CONST                      1: 'https://'
+                        18      LOAD_FAST                       0: self
+                        20      LOAD_ATTR                       1: api_host
+                        22      FORMAT_VALUE                    0
+                        24      LOAD_CONST                      2: ':'
+                        26      LOAD_FAST                       0: self
+                        28      LOAD_ATTR                       2: api_port
+                        30      FORMAT_VALUE                    0
+                        32      LOAD_CONST                      3: '/api/admin/get_server_file_mappings?token='
+                        34      LOAD_FAST                       0: self
+                        36      LOAD_ATTR                       0: agent_jwt_token
+                        38      FORMAT_VALUE                    0
+                        40      BUILD_STRING                    6
+                        42      STORE_FAST                      1: url
+                        44      SETUP_FINALLY                   230 (to 276)
+                        46      LOAD_GLOBAL                     3: requests
+                        48      LOAD_ATTR                       4: get
+                        50      LOAD_FAST                       1: url
+                        52      LOAD_CONST                      4: False
+                        54      LOAD_CONST                      5: 5
+                        56      LOAD_CONST                      6: ('verify', 'timeout')
+                        58      CALL_FUNCTION_KW                3
+                        60      STORE_FAST                      2: r
+                        62      LOAD_FAST                       2: r
+                        64      LOAD_ATTR                       5: ok
+                        66      POP_JUMP_IF_FALSE               252
+                        68      LOAD_FAST                       2: r
+                        70      LOAD_ATTR                       6: status_code
+                        72      LOAD_CONST                      7: 200
+                        74      COMPARE_OP                      2 (==)
+                        76      POP_JUMP_IF_FALSE               252
+                        78      LOAD_FAST                       2: r
+                        80      LOAD_METHOD                     7: json
+                        82      CALL_METHOD                     0
+                        84      STORE_FAST                      3: response
+                        86      LOAD_CONST                      8: 'file_mappings'
+                        88      LOAD_FAST                       3: response
+                        90      COMPARE_OP                      6 (in)
+                        92      POP_JUMP_IF_FALSE               152
+                        94      LOAD_FAST                       3: response
+                        96      LOAD_CONST                      8: 'file_mappings'
+                        98      BINARY_SUBSCR                   
+                        100     LOAD_METHOD                     8: items
+                        102     CALL_METHOD                     0
+                        104     GET_ITER                        
+                        106     FOR_ITER                        44 (to 152)
+                        108     UNPACK_SEQUENCE                 2
+                        110     STORE_FAST                      4: k
+                        112     STORE_FAST                      5: v
+                        114     LOAD_FAST                       5: v
+                        116     STORE_FAST                      6: file_map
+                        118     LOAD_FAST                       0: self
+                        120     LOAD_ATTR                       9: logger
+                        122     LOAD_METHOD                     10: debug
+                        124     LOAD_CONST                      9: 'Processing file mapping '
+                        126     LOAD_FAST                       4: k
+                        128     FORMAT_VALUE                    0
+                        130     BUILD_STRING                    2
+                        132     CALL_METHOD                     1
+                        134     POP_TOP                         
+                        136     LOAD_FAST                       0: self
+                        138     LOAD_ATTR                       11: process_file_mapping
+                        140     LOAD_FAST                       6: file_map
+                        142     LOAD_CONST                      0: None
+                        144     LOAD_CONST                      10: ('user_name',)
+                        146     CALL_FUNCTION_KW                2
+                        148     POP_TOP                         
+                        150     JUMP_ABSOLUTE                   106
+                        152     LOAD_CONST                      11: 'storage_mappings'
+                        154     LOAD_FAST                       3: response
+                        156     COMPARE_OP                      6 (in)
+                        158     POP_JUMP_IF_FALSE               250
+                        160     LOAD_FAST                       3: response
+                        162     LOAD_CONST                      8: 'file_mappings'
+                        164     BINARY_SUBSCR                   
+                        166     LOAD_METHOD                     8: items
+                        168     CALL_METHOD                     0
+                        170     GET_ITER                        
+                        172     FOR_ITER                        76 (to 250)
+                        174     UNPACK_SEQUENCE                 2
+                        176     STORE_FAST                      4: k
+                        178     STORE_FAST                      5: v
+                        180     LOAD_FAST                       0: self
+                        182     LOAD_ATTR                       9: logger
+                        184     LOAD_METHOD                     10: debug
+                        186     LOAD_CONST                      12: 'Proccessing storage mapping '
+                        188     LOAD_FAST                       4: k
+                        190     FORMAT_VALUE                    0
+                        192     BUILD_STRING                    2
+                        194     CALL_METHOD                     1
+                        196     POP_TOP                         
+                        198     LOAD_FAST                       0: self
+                        200     LOAD_ATTR                       12: server_id
+                        202     LOAD_FAST                       0: self
+                        204     LOAD_ATTR                       0: agent_jwt_token
+                        206     LOAD_FAST                       0: self
+                        208     LOAD_ATTR                       1: api_host
+                        210     LOAD_FAST                       0: self
+                        212     LOAD_ATTR                       2: api_port
+                        214     LOAD_GLOBAL                     7: json
+                        216     LOAD_METHOD                     13: dumps
+                        218     LOAD_FAST                       5: v
+                        220     CALL_METHOD                     1
+                        222     LOAD_CONST                      13: ('server_id', 'jwt', 'api_host', 'api_port', 'storage_mapping')
+                        224     BUILD_CONST_KEY_MAP             5
+                        226     STORE_FAST                      7: variables
+                        228     LOAD_FAST                       0: self
+                        230     LOAD_METHOD                     14: execute_script
+                        232     LOAD_FAST                       0: self
+                        234     LOAD_ATTR                       15: script_path
+                        236     FORMAT_VALUE                    0
+                        238     LOAD_CONST                      14: '\\builtin\\map_storage.ps1'
+                        240     BUILD_STRING                    2
+                        242     LOAD_FAST                       7: variables
+                        244     CALL_METHOD                     2
+                        246     POP_TOP                         
+                        248     JUMP_ABSOLUTE                   172
+                        250     JUMP_FORWARD                    20 (to 272)
+                        252     LOAD_FAST                       0: self
+                        254     LOAD_ATTR                       9: logger
+                        256     LOAD_METHOD                     16: error
+                        258     LOAD_CONST                      15: 'Retrieval of file mappings failed with status code: '
+                        260     LOAD_FAST                       2: r
+                        262     LOAD_ATTR                       6: status_code
+                        264     FORMAT_VALUE                    0
+                        266     BUILD_STRING                    2
+                        268     CALL_METHOD                     1
+                        270     POP_TOP                         
+                        272     POP_BLOCK                       
+                        274     JUMP_FORWARD                    62 (to 338)
+                        276     DUP_TOP                         
+                        278     LOAD_GLOBAL                     17: Exception
+                        280     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        282     POP_JUMP_IF_FALSE               336
+                        286     POP_TOP                         
+                        288     STORE_FAST                      8: ex
+                        290     POP_TOP                         
+                        292     SETUP_FINALLY                   30 (to 324)
+                        294     LOAD_GLOBAL                     18: traceback
+                        296     LOAD_METHOD                     19: format_exc
+                        298     CALL_METHOD                     0
+                        300     STORE_FAST                      9: tb
+                        302     LOAD_FAST                       0: self
+                        304     LOAD_ATTR                       9: logger
+                        306     LOAD_METHOD                     16: error
+                        308     LOAD_CONST                      16: 'File mapping failed with an exception: '
+                        310     LOAD_FAST                       9: tb
+                        312     FORMAT_VALUE                    0
+                        314     BUILD_STRING                    2
+                        316     CALL_METHOD                     1
+                        318     POP_TOP                         
+                        320     POP_BLOCK                       
+                        322     BEGIN_FINALLY                   
+                        324     LOAD_CONST                      0: None
+                        326     STORE_FAST                      8: ex
+                        328     DELETE_FAST                     8: ex
+                        330     END_FINALLY                     
+                        332     POP_EXCEPT                      
+                        334     JUMP_FORWARD                    2 (to 338)
+                        336     END_FINALLY                     
+                        338     LOAD_CONST                      0: None
+                        340     RETURN_VALUE                    
+                'BaseAgent.get_server_file_mappings'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: process_file_mapping
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 2
+                    Stack Size: 1
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                    [Var Names]
+                        'self'
+                        'file_map'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        '\n        Downloads file content for a file_map definition, wrties to file, and changes file permissions and ownership\n        '
+                        None
+                    [Disassembly]
+                        0       LOAD_CONST                      1: None
+                        2       RETURN_VALUE                    
+                'BaseAgent.process_file_mapping'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: get_user_downloads_dir
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 2
+                    Stack Size: 1
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                    [Var Names]
+                        'self'
+                        'user_name'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        '\n        Return the download path for the specified user on the system\n        '
+                        None
+                    [Disassembly]
+                        0       LOAD_CONST                      1: None
+                        2       RETURN_VALUE                    
+                'BaseAgent.get_user_downloads_dir'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: screenshot
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 2
+                    Stack Size: 1
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                    [Var Names]
+                        'self'
+                        'user_name'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        "\n        Returns a screenshot of the specified user's session\n        "
+                        None
+                    [Disassembly]
+                        0       LOAD_CONST                      1: None
+                        2       RETURN_VALUE                    
+                'BaseAgent.screenshot'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: launch_application_as_user
+                    Arg Count: 4
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 4
+                    Stack Size: 1
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                    [Var Names]
+                        'self'
+                        'user_name'
+                        'application_name'
+                        'application_args'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        '\n        Launch another application as the specified user\n        '
+                        None
+                    [Disassembly]
+                        0       LOAD_CONST                      1: None
+                        2       RETURN_VALUE                    
+                'BaseAgent.launch_application_as_user'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: replace_path_variables
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 2
+                    Stack Size: 1
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                    [Var Names]
+                        'self'
+                        'path'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        '\n        Replace variables in a path, such as HOMEPATH in windows or HOME in Linux\n        '
+                        None
+                    [Disassembly]
+                        0       LOAD_CONST                      1: None
+                        2       RETURN_VALUE                    
+                'BaseAgent.replace_path_variables'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: delayed_screenshot
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 3
+                    Stack Size: 3
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'sleep'
+                        'screenshot'
+                    [Var Names]
+                        'self'
+                        'user_name'
+                        'delay_seconds'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: sleep
+                        2       LOAD_FAST                       2: delay_seconds
+                        4       CALL_FUNCTION                   1
+                        6       POP_TOP                         
+                        8       LOAD_FAST                       0: self
+                        10      LOAD_METHOD                     1: screenshot
+                        12      LOAD_FAST                       1: user_name
+                        14      CALL_METHOD                     1
+                        16      POP_TOP                         
+                        18      LOAD_CONST                      0: None
+                        20      RETURN_VALUE                    
+                'BaseAgent.delayed_screenshot'
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: clean_file_mapping
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 4
+                    Stack Size: 4
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'replace_path_variables'
+                        'os'
+                        'path'
+                        'isfile'
+                        'remove'
+                        'logger'
+                        'debug'
+                    [Var Names]
+                        'self'
+                        'file_map'
+                        'user_name'
+                        'local_filename'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'destination'
+                        'File removed: '
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_METHOD                     0: replace_path_variables
+                        4       LOAD_FAST                       1: file_map
+                        6       LOAD_CONST                      1: 'destination'
+                        8       BINARY_SUBSCR                   
+                        10      LOAD_FAST                       2: user_name
+                        12      CALL_METHOD                     2
+                        14      STORE_FAST                      3: local_filename
+                        16      LOAD_GLOBAL                     1: os
+                        18      LOAD_ATTR                       2: path
+                        20      LOAD_METHOD                     3: isfile
+                        22      LOAD_FAST                       3: local_filename
+                        24      CALL_METHOD                     1
+                        26      POP_JUMP_IF_FALSE               56
+                        28      LOAD_GLOBAL                     1: os
+                        30      LOAD_METHOD                     4: remove
+                        32      LOAD_FAST                       3: local_filename
+                        34      CALL_METHOD                     1
+                        36      POP_TOP                         
+                        38      LOAD_FAST                       0: self
+                        40      LOAD_ATTR                       5: logger
+                        42      LOAD_METHOD                     6: debug
+                        44      LOAD_CONST                      2: 'File removed: '
+                        46      LOAD_FAST                       3: local_filename
+                        48      FORMAT_VALUE                    0
+                        50      BUILD_STRING                    2
+                        52      CALL_METHOD                     1
+                        54      POP_TOP                         
+                        56      LOAD_CONST                      0: None
+                        58      RETURN_VALUE                    
+                'BaseAgent.clean_file_mapping'
+                443
+                True
+                [Code]
+                    File Name: agents\base.py
+                    Object Name: register
+                    Arg Count: 6
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 15
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'requests'
+                        'post'
+                        'hostname'
+                        'ok'
+                        'status_code'
+                        'json'
+                        'logger'
+                        'error'
+                        'app_config'
+                        'open'
+                        'write'
+                        'save_configuration'
+                        'load_configuration'
+                        'warning'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                    [Var Names]
+                        'self'
+                        'token'
+                        'server_id'
+                        'host'
+                        'port'
+                        'auto_configure'
+                        'url'
+                        'r'
+                        'registration_response'
+                        'server_agent'
+                        'f_server_cert'
+                        'f_server_key'
+                        'f_jwt_key'
+                        'ex'
+                        'tb'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'https://'
+                        ':'
+                        '/api/admin/register_component'
+                        'server_agent'
+                        'registering'
+                        (
+                            'id'
+                            'type'
+                            'auto_configure'
+                            'hostname'
+                            'service_status'
+                        )
+                        (
+                            'type'
+                            'registration_token'
+                            'target_component'
+                        )
+                        False
+                        5
+                        (
+                            'json'
+                            'verify'
+                            'timeout'
+                        )
+                        200
+                        'error_message'
+                        'Registration failed: '
+                        'server_id'
+                        'api_host'
+                        'api_port'
+                        True
+                        'registered'
+                        'agent_jwt_token'
+                        'multi_user'
+                        'user_sso'
+                        'server_cert'
+                        'server_key'
+                        'server_public_key'
+                        'w'
+                        'server_private_key'
+                        'public_jwt_cert'
+                        'jwt_public_key'
+                        'Registration Failed: Invalid response from server.'
+                        'Workspaces server responded with status code '
+                        'Registration failed with an exception: '
+                    [Disassembly]
+                        0       LOAD_CONST                      1: 'https://'
+                        2       LOAD_FAST                       3: host
+                        4       FORMAT_VALUE                    0
+                        6       LOAD_CONST                      2: ':'
+                        8       LOAD_FAST                       4: port
+                        10      FORMAT_VALUE                    0
+                        12      LOAD_CONST                      3: '/api/admin/register_component'
+                        14      BUILD_STRING                    5
+                        16      STORE_FAST                      6: url
+                        18      SETUP_FINALLY                   436 (to 458)
+                        22      LOAD_GLOBAL                     0: requests
+                        24      LOAD_ATTR                       1: post
+                        26      LOAD_FAST                       6: url
+                        28      LOAD_CONST                      4: 'server_agent'
+                        30      LOAD_FAST                       1: token
+                        32      LOAD_FAST                       2: server_id
+                        34      LOAD_CONST                      4: 'server_agent'
+                        36      LOAD_FAST                       5: auto_configure
+                        38      LOAD_FAST                       0: self
+                        40      LOAD_ATTR                       2: hostname
+                        42      FORMAT_VALUE                    0
+                        44      LOAD_CONST                      5: 'registering'
+                        46      LOAD_CONST                      6: ('id', 'type', 'auto_configure', 'hostname', 'service_status')
+                        48      BUILD_CONST_KEY_MAP             5
+                        50      LOAD_CONST                      7: ('type', 'registration_token', 'target_component')
+                        52      BUILD_CONST_KEY_MAP             3
+                        54      LOAD_CONST                      8: False
+                        56      LOAD_CONST                      9: 5
+                        58      LOAD_CONST                      10: ('json', 'verify', 'timeout')
+                        60      CALL_FUNCTION_KW                4
+                        62      STORE_FAST                      7: r
+                        64      LOAD_FAST                       7: r
+                        66      LOAD_ATTR                       3: ok
+                        68      POP_JUMP_IF_FALSE               434
+                        72      LOAD_FAST                       7: r
+                        74      LOAD_ATTR                       4: status_code
+                        76      LOAD_CONST                      11: 200
+                        78      COMPARE_OP                      2 (==)
+                        80      POP_JUMP_IF_FALSE               434
+                        84      LOAD_FAST                       7: r
+                        86      LOAD_METHOD                     5: json
+                        88      CALL_METHOD                     0
+                        90      STORE_FAST                      8: registration_response
+                        92      LOAD_CONST                      12: 'error_message'
+                        94      LOAD_FAST                       8: registration_response
+                        96      COMPARE_OP                      6 (in)
+                        98      POP_JUMP_IF_FALSE               126
+                        100     LOAD_FAST                       0: self
+                        102     LOAD_ATTR                       6: logger
+                        104     LOAD_METHOD                     7: error
+                        106     LOAD_CONST                      13: 'Registration failed: '
+                        108     LOAD_FAST                       8: registration_response
+                        110     LOAD_CONST                      12: 'error_message'
+                        112     BINARY_SUBSCR                   
+                        114     FORMAT_VALUE                    0
+                        116     BUILD_STRING                    2
+                        118     CALL_METHOD                     1
+                        120     POP_TOP                         
+                        122     JUMP_ABSOLUTE                   454
+                        126     LOAD_CONST                      4: 'server_agent'
+                        128     LOAD_FAST                       8: registration_response
+                        130     COMPARE_OP                      6 (in)
+                        132     POP_JUMP_IF_FALSE               420
+                        136     LOAD_FAST                       8: registration_response
+                        138     LOAD_CONST                      4: 'server_agent'
+                        140     BINARY_SUBSCR                   
+                        142     STORE_FAST                      9: server_agent
+                        144     LOAD_FAST                       2: server_id
+                        146     LOAD_FAST                       0: self
+                        148     LOAD_ATTR                       8: app_config
+                        150     LOAD_CONST                      14: 'server_id'
+                        152     STORE_SUBSCR                    
+                        154     LOAD_FAST                       3: host
+                        156     LOAD_FAST                       0: self
+                        158     LOAD_ATTR                       8: app_config
+                        160     LOAD_CONST                      15: 'api_host'
+                        162     STORE_SUBSCR                    
+                        164     LOAD_FAST                       4: port
+                        166     LOAD_FAST                       0: self
+                        168     LOAD_ATTR                       8: app_config
+                        170     LOAD_CONST                      16: 'api_port'
+                        172     STORE_SUBSCR                    
+                        174     LOAD_CONST                      17: True
+                        176     LOAD_FAST                       0: self
+                        178     LOAD_ATTR                       8: app_config
+                        180     LOAD_CONST                      18: 'registered'
+                        182     STORE_SUBSCR                    
+                        184     LOAD_FAST                       9: server_agent
+                        186     LOAD_CONST                      19: 'agent_jwt_token'
+                        188     BINARY_SUBSCR                   
+                        190     LOAD_FAST                       0: self
+                        192     LOAD_ATTR                       8: app_config
+                        194     LOAD_CONST                      19: 'agent_jwt_token'
+                        196     STORE_SUBSCR                    
+                        198     LOAD_CONST                      20: 'multi_user'
+                        200     LOAD_FAST                       9: server_agent
+                        202     COMPARE_OP                      6 (in)
+                        204     POP_JUMP_IF_FALSE               220
+                        206     LOAD_FAST                       9: server_agent
+                        208     LOAD_CONST                      20: 'multi_user'
+                        210     BINARY_SUBSCR                   
+                        212     LOAD_FAST                       0: self
+                        214     LOAD_ATTR                       8: app_config
+                        216     LOAD_CONST                      20: 'multi_user'
+                        218     STORE_SUBSCR                    
+                        220     LOAD_CONST                      21: 'user_sso'
+                        222     LOAD_FAST                       9: server_agent
+                        224     COMPARE_OP                      6 (in)
+                        226     POP_JUMP_IF_FALSE               242
+                        228     LOAD_FAST                       9: server_agent
+                        230     LOAD_CONST                      21: 'user_sso'
+                        232     BINARY_SUBSCR                   
+                        234     LOAD_FAST                       0: self
+                        236     LOAD_ATTR                       8: app_config
+                        238     LOAD_CONST                      21: 'user_sso'
+                        240     STORE_SUBSCR                    
+                        242     LOAD_CONST                      22: 'server_cert'
+                        244     LOAD_FAST                       9: server_agent
+                        246     COMPARE_OP                      6 (in)
+                        248     POP_JUMP_IF_FALSE               346
+                        252     LOAD_CONST                      23: 'server_key'
+                        254     LOAD_FAST                       9: server_agent
+                        256     COMPARE_OP                      6 (in)
+                        258     POP_JUMP_IF_FALSE               346
+                        262     LOAD_GLOBAL                     9: open
+                        264     LOAD_FAST                       0: self
+                        266     LOAD_ATTR                       8: app_config
+                        268     LOAD_CONST                      24: 'server_public_key'
+                        270     BINARY_SUBSCR                   
+                        272     LOAD_CONST                      25: 'w'
+                        274     CALL_FUNCTION                   2
+                        276     SETUP_WITH                      20 (to 298)
+                        278     STORE_FAST                      10: f_server_cert
+                        280     LOAD_FAST                       10: f_server_cert
+                        282     LOAD_METHOD                     10: write
+                        284     LOAD_FAST                       9: server_agent
+                        286     LOAD_CONST                      22: 'server_cert'
+                        288     BINARY_SUBSCR                   
+                        290     CALL_METHOD                     1
+                        292     POP_TOP                         
+                        294     POP_BLOCK                       
+                        296     BEGIN_FINALLY                   
+                        298     WITH_CLEANUP_START              
+                        300     WITH_CLEANUP_FINISH             
+                        302     END_FINALLY                     
+                        304     LOAD_GLOBAL                     9: open
+                        306     LOAD_FAST                       0: self
+                        308     LOAD_ATTR                       8: app_config
+                        310     LOAD_CONST                      26: 'server_private_key'
+                        312     BINARY_SUBSCR                   
+                        314     LOAD_CONST                      25: 'w'
+                        316     CALL_FUNCTION                   2
+                        318     SETUP_WITH                      20 (to 340)
+                        320     STORE_FAST                      11: f_server_key
+                        322     LOAD_FAST                       11: f_server_key
+                        324     LOAD_METHOD                     10: write
+                        326     LOAD_FAST                       9: server_agent
+                        328     LOAD_CONST                      23: 'server_key'
+                        330     BINARY_SUBSCR                   
+                        332     CALL_METHOD                     1
+                        334     POP_TOP                         
+                        336     POP_BLOCK                       
+                        338     BEGIN_FINALLY                   
+                        340     WITH_CLEANUP_START              
+                        342     WITH_CLEANUP_FINISH             
+                        344     END_FINALLY                     
+                        346     LOAD_CONST                      27: 'public_jwt_cert'
+                        348     LOAD_FAST                       9: server_agent
+                        350     COMPARE_OP                      6 (in)
+                        352     POP_JUMP_IF_FALSE               398
+                        356     LOAD_GLOBAL                     9: open
+                        358     LOAD_FAST                       0: self
+                        360     LOAD_ATTR                       8: app_config
+                        362     LOAD_CONST                      28: 'jwt_public_key'
+                        364     BINARY_SUBSCR                   
+                        366     LOAD_CONST                      25: 'w'
+                        368     CALL_FUNCTION                   2
+                        370     SETUP_WITH                      20 (to 392)
+                        372     STORE_FAST                      12: f_jwt_key
+                        374     LOAD_FAST                       12: f_jwt_key
+                        376     LOAD_METHOD                     10: write
+                        378     LOAD_FAST                       9: server_agent
+                        380     LOAD_CONST                      27: 'public_jwt_cert'
+                        382     BINARY_SUBSCR                   
+                        384     CALL_METHOD                     1
+                        386     POP_TOP                         
+                        388     POP_BLOCK                       
+                        390     BEGIN_FINALLY                   
+                        392     WITH_CLEANUP_START              
+                        394     WITH_CLEANUP_FINISH             
+                        396     END_FINALLY                     
+                        398     LOAD_FAST                       0: self
+                        400     LOAD_METHOD                     11: save_configuration
+                        402     CALL_METHOD                     0
+                        404     POP_TOP                         
+                        406     LOAD_FAST                       0: self
+                        408     LOAD_METHOD                     12: load_configuration
+                        410     CALL_METHOD                     0
+                        412     POP_TOP                         
+                        414     POP_BLOCK                       
+                        416     LOAD_CONST                      17: True
+                        418     RETURN_VALUE                    
+                        420     LOAD_FAST                       0: self
+                        422     LOAD_ATTR                       6: logger
+                        424     LOAD_METHOD                     7: error
+                        426     LOAD_CONST                      29: 'Registration Failed: Invalid response from server.'
+                        428     CALL_METHOD                     1
+                        430     POP_TOP                         
+                        432     JUMP_FORWARD                    20 (to 454)
+                        434     LOAD_FAST                       0: self
+                        436     LOAD_ATTR                       6: logger
+                        438     LOAD_METHOD                     13: warning
+                        440     LOAD_CONST                      30: 'Workspaces server responded with status code '
+                        442     LOAD_FAST                       7: r
+                        444     LOAD_ATTR                       4: status_code
+                        446     FORMAT_VALUE                    0
+                        448     BUILD_STRING                    2
+                        450     CALL_METHOD                     1
+                        452     POP_TOP                         
+                        454     POP_BLOCK                       
+                        456     JUMP_FORWARD                    62 (to 520)
+                        458     DUP_TOP                         
+                        460     LOAD_GLOBAL                     14: Exception
+                        462     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        464     POP_JUMP_IF_FALSE               518
+                        468     POP_TOP                         
+                        470     STORE_FAST                      13: ex
+                        472     POP_TOP                         
+                        474     SETUP_FINALLY                   30 (to 506)
+                        476     LOAD_GLOBAL                     15: traceback
+                        478     LOAD_METHOD                     16: format_exc
+                        480     CALL_METHOD                     0
+                        482     STORE_FAST                      14: tb
+                        484     LOAD_FAST                       0: self
+                        486     LOAD_ATTR                       6: logger
+                        488     LOAD_METHOD                     7: error
+                        490     LOAD_CONST                      31: 'Registration failed with an exception: '
+                        492     LOAD_FAST                       14: tb
+                        494     FORMAT_VALUE                    0
+                        496     BUILD_STRING                    2
+                        498     CALL_METHOD                     1
+                        500     POP_TOP                         
+                        502     POP_BLOCK                       
+                        504     BEGIN_FINALLY                   
+                        506     LOAD_CONST                      0: None
+                        508     STORE_FAST                      13: ex
+                        510     DELETE_FAST                     13: ex
+                        512     END_FINALLY                     
+                        514     POP_EXCEPT                      
+                        516     JUMP_FORWARD                    2 (to 520)
+                        518     END_FINALLY                     
+                        520     LOAD_CONST                      0: None
+                        522     RETURN_VALUE                    
+                'BaseAgent.register'
+                (
+                    0
+                    None
+                )
+                (
+                    443
+                    True
+                )
+            [Disassembly]
+                0       LOAD_NAME                       0: __name__
+                2       STORE_NAME                      1: __module__
+                4       LOAD_CONST                      0: 'BaseAgent'
+                6       STORE_NAME                      2: __qualname__
+                8       LOAD_CONST                      1: <CODE> __init__
+                10      LOAD_CONST                      2: 'BaseAgent.__init__'
+                12      MAKE_FUNCTION                   0
+                14      STORE_NAME                      3: __init__
+                16      LOAD_NAME                       4: property
+                18      LOAD_CONST                      3: <CODE> port
+                20      LOAD_CONST                      4: 'BaseAgent.port'
+                22      MAKE_FUNCTION                   0
+                24      CALL_FUNCTION                   1
+                26      STORE_NAME                      5: port
+                28      LOAD_NAME                       4: property
+                30      LOAD_CONST                      5: <CODE> ssl
+                32      LOAD_CONST                      6: 'BaseAgent.ssl'
+                34      MAKE_FUNCTION                   0
+                36      CALL_FUNCTION                   1
+                38      STORE_NAME                      6: ssl
+                40      LOAD_NAME                       4: property
+                42      LOAD_CONST                      7: <CODE> default_upload_dir
+                44      LOAD_CONST                      8: 'BaseAgent.default_upload_dir'
+                46      MAKE_FUNCTION                   0
+                48      CALL_FUNCTION                   1
+                50      STORE_NAME                      7: default_upload_dir
+                52      LOAD_NAME                       4: property
+                54      LOAD_CONST                      9: <CODE> default_download_dir
+                56      LOAD_CONST                      10: 'BaseAgent.default_download_dir'
+                58      MAKE_FUNCTION                   0
+                60      CALL_FUNCTION                   1
+                62      STORE_NAME                      8: default_download_dir
+                64      LOAD_NAME                       4: property
+                66      LOAD_CONST                      11: <CODE> is_multi_user
+                68      LOAD_CONST                      12: 'BaseAgent.is_multi_user'
+                70      MAKE_FUNCTION                   0
+                72      CALL_FUNCTION                   1
+                74      STORE_NAME                      9: is_multi_user
+                76      LOAD_NAME                       4: property
+                78      LOAD_CONST                      13: <CODE> is_user_sso
+                80      LOAD_CONST                      14: 'BaseAgent.is_user_sso'
+                82      MAKE_FUNCTION                   0
+                84      CALL_FUNCTION                   1
+                86      STORE_NAME                      10: is_user_sso
+                88      LOAD_NAME                       4: property
+                90      LOAD_CONST                      15: <CODE> server_id
+                92      LOAD_CONST                      16: 'BaseAgent.server_id'
+                94      MAKE_FUNCTION                   0
+                96      CALL_FUNCTION                   1
+                98      STORE_NAME                      11: server_id
+                100     LOAD_NAME                       4: property
+                102     LOAD_CONST                      17: <CODE> log_file
+                104     LOAD_CONST                      18: 'BaseAgent.log_file'
+                106     MAKE_FUNCTION                   0
+                108     CALL_FUNCTION                   1
+                110     STORE_NAME                      12: log_file
+                112     LOAD_NAME                       4: property
+                114     LOAD_CONST                      19: <CODE> api_host
+                116     LOAD_CONST                      20: 'BaseAgent.api_host'
+                118     MAKE_FUNCTION                   0
+                120     CALL_FUNCTION                   1
+                122     STORE_NAME                      13: api_host
+                124     LOAD_NAME                       4: property
+                126     LOAD_CONST                      21: <CODE> api_port
+                128     LOAD_CONST                      22: 'BaseAgent.api_port'
+                130     MAKE_FUNCTION                   0
+                132     CALL_FUNCTION                   1
+                134     STORE_NAME                      14: api_port
+                136     LOAD_NAME                       4: property
+                138     LOAD_CONST                      23: <CODE> registered
+                140     LOAD_CONST                      24: 'BaseAgent.registered'
+                142     MAKE_FUNCTION                   0
+                144     CALL_FUNCTION                   1
+                146     STORE_NAME                      15: registered
+                148     LOAD_NAME                       4: property
+                150     LOAD_CONST                      25: <CODE> agent_jwt_token
+                152     LOAD_CONST                      26: 'BaseAgent.agent_jwt_token'
+                154     MAKE_FUNCTION                   0
+                156     CALL_FUNCTION                   1
+                158     STORE_NAME                      16: agent_jwt_token
+                160     LOAD_NAME                       4: property
+                162     LOAD_CONST                      27: <CODE> server_public_key
+                164     LOAD_CONST                      28: 'BaseAgent.server_public_key'
+                166     MAKE_FUNCTION                   0
+                168     CALL_FUNCTION                   1
+                170     STORE_NAME                      17: server_public_key
+                172     LOAD_NAME                       4: property
+                174     LOAD_CONST                      29: <CODE> server_private_key
+                176     LOAD_CONST                      30: 'BaseAgent.server_private_key'
+                178     MAKE_FUNCTION                   0
+                180     CALL_FUNCTION                   1
+                182     STORE_NAME                      18: server_private_key
+                184     LOAD_NAME                       4: property
+                186     LOAD_CONST                      31: <CODE> script_path
+                188     LOAD_CONST                      32: 'BaseAgent.script_path'
+                190     MAKE_FUNCTION                   0
+                192     CALL_FUNCTION                   1
+                194     STORE_NAME                      19: script_path
+                196     LOAD_NAME                       4: property
+                198     LOAD_CONST                      33: <CODE> hostname
+                200     LOAD_CONST                      34: 'BaseAgent.hostname'
+                202     MAKE_FUNCTION                   0
+                204     CALL_FUNCTION                   1
+                206     STORE_NAME                      20: hostname
+                208     LOAD_NAME                       4: property
+                210     LOAD_CONST                      35: <CODE> debug
+                212     LOAD_CONST                      36: 'BaseAgent.debug'
+                214     MAKE_FUNCTION                   0
+                216     CALL_FUNCTION                   1
+                218     STORE_NAME                      21: debug
+                220     LOAD_CONST                      37: <CODE> save_configuration
+                222     LOAD_CONST                      38: 'BaseAgent.save_configuration'
+                224     MAKE_FUNCTION                   0
+                226     STORE_NAME                      22: save_configuration
+                228     LOAD_CONST                      39: <CODE> load_configuration
+                230     LOAD_CONST                      40: 'BaseAgent.load_configuration'
+                232     MAKE_FUNCTION                   0
+                234     STORE_NAME                      23: load_configuration
+                236     LOAD_CONST                      41: <CODE> ready
+                238     LOAD_CONST                      42: 'BaseAgent.ready'
+                240     MAKE_FUNCTION                   0
+                242     STORE_NAME                      24: ready
+                244     LOAD_CONST                      43: <CODE> startup
+                246     LOAD_CONST                      44: 'BaseAgent.startup'
+                248     MAKE_FUNCTION                   0
+                250     STORE_NAME                      25: startup
+                252     LOAD_CONST                      45: <CODE> session_start
+                254     LOAD_CONST                      46: 'BaseAgent.session_start'
+                256     MAKE_FUNCTION                   0
+                258     STORE_NAME                      26: session_start
+                260     LOAD_CONST                      47: <CODE> session_end
+                262     LOAD_CONST                      48: 'BaseAgent.session_end'
+                264     MAKE_FUNCTION                   0
+                266     STORE_NAME                      27: session_end
+                268     LOAD_CONST                      77: (0, None)
+                270     LOAD_CONST                      51: <CODE> set_session_state
+                272     LOAD_CONST                      52: 'BaseAgent.set_session_state'
+                274     MAKE_FUNCTION                   1
+                276     STORE_NAME                      28: set_session_state
+                278     LOAD_CONST                      53: <CODE> execute_startup_scripts
+                280     LOAD_CONST                      54: 'BaseAgent.execute_startup_scripts'
+                282     MAKE_FUNCTION                   0
+                284     STORE_NAME                      29: execute_startup_scripts
+                286     LOAD_NAME                       30: abstractmethod
+                288     LOAD_CONST                      55: <CODE> execute_script
+                290     LOAD_CONST                      56: 'BaseAgent.execute_script'
+                292     MAKE_FUNCTION                   0
+                294     CALL_FUNCTION                   1
+                296     STORE_NAME                      31: execute_script
+                298     LOAD_CONST                      57: <CODE> get_server_file_mappings
+                300     LOAD_CONST                      58: 'BaseAgent.get_server_file_mappings'
+                302     MAKE_FUNCTION                   0
+                304     STORE_NAME                      32: get_server_file_mappings
+                306     LOAD_NAME                       30: abstractmethod
+                308     LOAD_CONST                      59: <CODE> process_file_mapping
+                310     LOAD_CONST                      60: 'BaseAgent.process_file_mapping'
+                312     MAKE_FUNCTION                   0
+                314     CALL_FUNCTION                   1
+                316     STORE_NAME                      33: process_file_mapping
+                318     LOAD_NAME                       30: abstractmethod
+                320     LOAD_CONST                      61: <CODE> get_user_downloads_dir
+                322     LOAD_CONST                      62: 'BaseAgent.get_user_downloads_dir'
+                324     MAKE_FUNCTION                   0
+                326     CALL_FUNCTION                   1
+                328     STORE_NAME                      34: get_user_downloads_dir
+                330     LOAD_NAME                       30: abstractmethod
+                332     LOAD_CONST                      63: <CODE> screenshot
+                334     LOAD_CONST                      64: 'BaseAgent.screenshot'
+                336     MAKE_FUNCTION                   0
+                338     CALL_FUNCTION                   1
+                340     STORE_NAME                      35: screenshot
+                342     LOAD_NAME                       30: abstractmethod
+                344     LOAD_CONST                      65: <CODE> launch_application_as_user
+                346     LOAD_CONST                      66: 'BaseAgent.launch_application_as_user'
+                348     MAKE_FUNCTION                   0
+                350     CALL_FUNCTION                   1
+                352     STORE_NAME                      36: launch_application_as_user
+                354     LOAD_NAME                       30: abstractmethod
+                356     LOAD_CONST                      67: <CODE> replace_path_variables
+                358     LOAD_CONST                      68: 'BaseAgent.replace_path_variables'
+                360     MAKE_FUNCTION                   0
+                362     CALL_FUNCTION                   1
+                364     STORE_NAME                      37: replace_path_variables
+                366     LOAD_CONST                      69: <CODE> delayed_screenshot
+                368     LOAD_CONST                      70: 'BaseAgent.delayed_screenshot'
+                370     MAKE_FUNCTION                   0
+                372     STORE_NAME                      38: delayed_screenshot
+                374     LOAD_CONST                      71: <CODE> clean_file_mapping
+                376     LOAD_CONST                      72: 'BaseAgent.clean_file_mapping'
+                378     MAKE_FUNCTION                   0
+                380     STORE_NAME                      39: clean_file_mapping
+                382     LOAD_CONST                      78: (443, True)
+                384     LOAD_CONST                      75: <CODE> register
+                386     LOAD_CONST                      76: 'BaseAgent.register'
+                388     MAKE_FUNCTION                   1
+                390     STORE_NAME                      40: register
+                392     LOAD_CONST                      50: None
+                394     RETURN_VALUE                    
+        'BaseAgent'
+    [Disassembly]
+        0       LOAD_CONST                      0: 0
+        2       LOAD_CONST                      1: None
+        4       IMPORT_NAME                     0: os
+        6       STORE_NAME                      0: os
+        8       LOAD_CONST                      0: 0
+        10      LOAD_CONST                      1: None
+        12      IMPORT_NAME                     1: yaml
+        14      STORE_NAME                      1: yaml
+        16      LOAD_CONST                      0: 0
+        18      LOAD_CONST                      1: None
+        20      IMPORT_NAME                     2: requests
+        22      STORE_NAME                      2: requests
+        24      LOAD_CONST                      0: 0
+        26      LOAD_CONST                      1: None
+        28      IMPORT_NAME                     3: traceback
+        30      STORE_NAME                      3: traceback
+        32      LOAD_CONST                      0: 0
+        34      LOAD_CONST                      1: None
+        36      IMPORT_NAME                     4: socket
+        38      STORE_NAME                      4: socket
+        40      LOAD_CONST                      0: 0
+        42      LOAD_CONST                      1: None
+        44      IMPORT_NAME                     5: json
+        46      STORE_NAME                      5: json
+        48      LOAD_CONST                      0: 0
+        50      LOAD_CONST                      1: None
+        52      IMPORT_NAME                     6: threading
+        54      STORE_NAME                      6: threading
+        56      LOAD_CONST                      0: 0
+        58      LOAD_CONST                      2: ('sleep',)
+        60      IMPORT_NAME                     7: time
+        62      IMPORT_FROM                     8: sleep
+        64      STORE_NAME                      8: sleep
+        66      POP_TOP                         
+        68      LOAD_CONST                      0: 0
+        70      LOAD_CONST                      3: ('abstractmethod',)
+        72      IMPORT_NAME                     9: abc
+        74      IMPORT_FROM                     10: abstractmethod
+        76      STORE_NAME                      10: abstractmethod
+        78      POP_TOP                         
+        80      LOAD_BUILD_CLASS                
+        82      LOAD_CONST                      4: <CODE> BaseAgent
+        84      LOAD_CONST                      5: 'BaseAgent'
+        86      MAKE_FUNCTION                   0
+        88      LOAD_CONST                      5: 'BaseAgent'
+        90      CALL_FUNCTION                   2
+        92      STORE_NAME                      11: BaseAgent
+        94      LOAD_CONST                      1: None
+        96      RETURN_VALUE                    

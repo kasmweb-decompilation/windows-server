@@ -1,0 +1,1508 @@
+windows_agent.pyc (Python 3.8)
+[Code]
+    File Name: agents\windows_agent.py
+    Object Name: <module>
+    Arg Count: 0
+    Pos Only Arg Count: 0
+    KW Only Arg Count: 0
+    Locals: 0
+    Stack Size: 4
+    Flags: 0x00000040 (CO_NOFREE)
+    [Names]
+        'os'
+        'yaml'
+        'requests'
+        'traceback'
+        'logging'
+        'subprocess'
+        'base64'
+        'uuid'
+        're'
+        'win32con'
+        'win32ts'
+        'win32security'
+        'win32process'
+        'win32event'
+        'win32api'
+        'win32profile'
+        'winreg'
+        'base'
+        'BaseAgent'
+        'windows_eventlog_handler'
+        'WindowsEventLogHandler'
+        'WindowsAgent'
+    [Var Names]
+    [Free Vars]
+    [Cell Vars]
+    [Constants]
+        0
+        None
+        1
+        (
+            'BaseAgent'
+        )
+        (
+            'WindowsEventLogHandler'
+        )
+        [Code]
+            File Name: agents\windows_agent.py
+            Object Name: WindowsAgent
+            Arg Count: 0
+            Pos Only Arg Count: 0
+            KW Only Arg Count: 0
+            Locals: 0
+            Stack Size: 3
+            Flags: 0x00000000
+            [Names]
+                '__name__'
+                '__module__'
+                '__qualname__'
+                '__init__'
+                'get_user_downloads_dir'
+                'replace_path_variables'
+                'process_file_mapping'
+                'execute_script'
+                'screenshot'
+                'launch_application_as_user'
+                'is_file_hidden'
+                'get_user_profile_dir'
+                '__classcell__'
+            [Var Names]
+            [Free Vars]
+            [Cell Vars]
+                '__class__'
+            [Constants]
+                'WindowsAgent'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: __init__
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 4
+                    Stack Size: 5
+                    Flags: 0x00000003 (CO_OPTIMIZED | CO_NEWLOCALS)
+                    [Names]
+                        'WindowsEventLogHandler'
+                        'setFormatter'
+                        'logging'
+                        'Formatter'
+                        'addHandler'
+                        'super'
+                        '__init__'
+                    [Var Names]
+                        'self'
+                        'config_file'
+                        'logger'
+                        'handler'
+                    [Free Vars]
+                        '__class__'
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        '%(message)s'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: WindowsEventLogHandler
+                        2       CALL_FUNCTION                   0
+                        4       STORE_FAST                      3: handler
+                        6       LOAD_FAST                       3: handler
+                        8       LOAD_METHOD                     1: setFormatter
+                        10      LOAD_GLOBAL                     2: logging
+                        12      LOAD_METHOD                     3: Formatter
+                        14      LOAD_CONST                      1: '%(message)s'
+                        16      CALL_METHOD                     1
+                        18      CALL_METHOD                     1
+                        20      POP_TOP                         
+                        22      LOAD_FAST                       2: logger
+                        24      LOAD_METHOD                     4: addHandler
+                        26      LOAD_FAST                       3: handler
+                        28      CALL_METHOD                     1
+                        30      POP_TOP                         
+                        32      LOAD_GLOBAL                     5: super
+                        34      CALL_FUNCTION                   0
+                        36      LOAD_METHOD                     6: __init__
+                        38      LOAD_FAST                       1: config_file
+                        40      LOAD_FAST                       2: logger
+                        42      CALL_METHOD                     2
+                        44      POP_TOP                         
+                        46      LOAD_CONST                      0: None
+                        48      RETURN_VALUE                    
+                'WindowsAgent.__init__'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: get_user_downloads_dir
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 7
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'win32security'
+                        'LookupAccountName'
+                        'Exception'
+                        'ConvertSidToStringSid'
+                        'winreg'
+                        'OpenKey'
+                        'HKEY_USERS'
+                        'QueryValueEx'
+                        'logger'
+                        'warning'
+                    [Var Names]
+                        'self'
+                        'user_name'
+                        'sid'
+                        'key'
+                        'value'
+                        'value_type'
+                        'e'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        0
+                        'No user %s found'
+                        '%s\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders'
+                        '{374DE290-123F-4565-9164-39C4925E467B}'
+                        'Unable to find user profile: '
+                    [Disassembly]
+                        0       SETUP_FINALLY                   86 (to 88)
+                        2       LOAD_GLOBAL                     0: win32security
+                        4       LOAD_METHOD                     1: LookupAccountName
+                        6       LOAD_CONST                      0: None
+                        8       LOAD_FAST                       1: user_name
+                        10      CALL_METHOD                     2
+                        12      LOAD_CONST                      1: 0
+                        14      BINARY_SUBSCR                   
+                        16      STORE_FAST                      2: sid
+                        18      LOAD_FAST                       2: sid
+                        20      LOAD_CONST                      0: None
+                        22      COMPARE_OP                      8 (is)
+                        24      POP_JUMP_IF_FALSE               38
+                        26      LOAD_GLOBAL                     2: Exception
+                        28      LOAD_CONST                      2: 'No user %s found'
+                        30      LOAD_FAST                       1: user_name
+                        32      BINARY_MODULO                   
+                        34      CALL_FUNCTION                   1
+                        36      RAISE_VARARGS                   1
+                        38      LOAD_GLOBAL                     0: win32security
+                        40      LOAD_METHOD                     3: ConvertSidToStringSid
+                        42      LOAD_FAST                       2: sid
+                        44      CALL_METHOD                     1
+                        46      STORE_FAST                      2: sid
+                        48      LOAD_GLOBAL                     4: winreg
+                        50      LOAD_METHOD                     5: OpenKey
+                        52      LOAD_GLOBAL                     4: winreg
+                        54      LOAD_ATTR                       6: HKEY_USERS
+                        56      LOAD_CONST                      3: '%s\\Software\\Microsoft\\Windows\\CurrentVersion\\Explorer\\Shell Folders'
+                        58      LOAD_FAST                       2: sid
+                        60      BINARY_MODULO                   
+                        62      CALL_METHOD                     2
+                        64      STORE_FAST                      3: key
+                        66      LOAD_GLOBAL                     4: winreg
+                        68      LOAD_METHOD                     7: QueryValueEx
+                        70      LOAD_FAST                       3: key
+                        72      LOAD_CONST                      4: '{374DE290-123F-4565-9164-39C4925E467B}'
+                        74      CALL_METHOD                     2
+                        76      UNPACK_SEQUENCE                 2
+                        78      STORE_FAST                      4: value
+                        80      STORE_FAST                      5: value_type
+                        82      LOAD_FAST                       4: value
+                        84      POP_BLOCK                       
+                        86      RETURN_VALUE                    
+                        88      DUP_TOP                         
+                        90      LOAD_GLOBAL                     2: Exception
+                        92      COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        94      POP_JUMP_IF_FALSE               144
+                        96      POP_TOP                         
+                        98      STORE_FAST                      6: e
+                        100     POP_TOP                         
+                        102     SETUP_FINALLY                   28 (to 132)
+                        104     LOAD_FAST                       0: self
+                        106     LOAD_ATTR                       8: logger
+                        108     LOAD_METHOD                     9: warning
+                        110     LOAD_CONST                      5: 'Unable to find user profile: '
+                        112     LOAD_FAST                       6: e
+                        114     FORMAT_VALUE                    0
+                        116     BUILD_STRING                    2
+                        118     CALL_METHOD                     1
+                        120     POP_TOP                         
+                        122     POP_BLOCK                       
+                        124     POP_EXCEPT                      
+                        126     CALL_FINALLY                    4 <INVALID>
+                        128     LOAD_CONST                      0: None
+                        130     RETURN_VALUE                    
+                        132     LOAD_CONST                      0: None
+                        134     STORE_FAST                      6: e
+                        136     DELETE_FAST                     6: e
+                        138     END_FINALLY                     
+                        140     POP_EXCEPT                      
+                        142     JUMP_FORWARD                    2 (to 146)
+                        144     END_FINALLY                     
+                        146     LOAD_CONST                      0: None
+                        148     RETURN_VALUE                    
+                'WindowsAgent.get_user_downloads_dir'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: replace_path_variables
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 8
+                    Stack Size: 6
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        're'
+                        'compile'
+                        'finditer'
+                        'group'
+                        'get_user_profile_dir'
+                        'replace'
+                        'os'
+                        'environ'
+                    [Var Names]
+                        'self'
+                        'path'
+                        'user_name'
+                        'pattern'
+                        'newpath'
+                        'm'
+                        'env_var_name'
+                        'home'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        '\\%([a-zA-Z0-9-_]+)\\%'
+                        1
+                        'HOMEPATH'
+                        '%'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: re
+                        2       LOAD_METHOD                     1: compile
+                        4       LOAD_CONST                      1: '\\%([a-zA-Z0-9-_]+)\\%'
+                        6       CALL_METHOD                     1
+                        8       STORE_FAST                      3: pattern
+                        10      LOAD_FAST                       1: path
+                        12      STORE_FAST                      4: newpath
+                        14      LOAD_GLOBAL                     0: re
+                        16      LOAD_METHOD                     2: finditer
+                        18      LOAD_FAST                       3: pattern
+                        20      LOAD_FAST                       1: path
+                        22      CALL_METHOD                     2
+                        24      GET_ITER                        
+                        26      FOR_ITER                        94 (to 122)
+                        28      STORE_FAST                      5: m
+                        30      LOAD_FAST                       5: m
+                        32      LOAD_METHOD                     3: group
+                        34      LOAD_CONST                      2: 1
+                        36      CALL_METHOD                     1
+                        38      STORE_FAST                      6: env_var_name
+                        40      LOAD_FAST                       2: user_name
+                        42      POP_JUMP_IF_FALSE               84
+                        44      LOAD_FAST                       6: env_var_name
+                        46      LOAD_CONST                      3: 'HOMEPATH'
+                        48      COMPARE_OP                      2 (==)
+                        50      POP_JUMP_IF_FALSE               84
+                        52      LOAD_FAST                       0: self
+                        54      LOAD_METHOD                     4: get_user_profile_dir
+                        56      LOAD_FAST                       2: user_name
+                        58      CALL_METHOD                     1
+                        60      STORE_FAST                      7: home
+                        62      LOAD_FAST                       4: newpath
+                        64      LOAD_METHOD                     5: replace
+                        66      LOAD_CONST                      4: '%'
+                        68      LOAD_FAST                       6: env_var_name
+                        70      FORMAT_VALUE                    0
+                        72      LOAD_CONST                      4: '%'
+                        74      BUILD_STRING                    3
+                        76      LOAD_FAST                       7: home
+                        78      CALL_METHOD                     2
+                        80      STORE_FAST                      4: newpath
+                        82      JUMP_ABSOLUTE                   26
+                        84      LOAD_FAST                       6: env_var_name
+                        86      LOAD_GLOBAL                     6: os
+                        88      LOAD_ATTR                       7: environ
+                        90      COMPARE_OP                      6 (in)
+                        92      POP_JUMP_IF_FALSE               26
+                        94      LOAD_FAST                       4: newpath
+                        96      LOAD_METHOD                     5: replace
+                        98      LOAD_CONST                      4: '%'
+                        100     LOAD_FAST                       6: env_var_name
+                        102     FORMAT_VALUE                    0
+                        104     LOAD_CONST                      4: '%'
+                        106     BUILD_STRING                    3
+                        108     LOAD_GLOBAL                     6: os
+                        110     LOAD_ATTR                       7: environ
+                        112     LOAD_FAST                       6: env_var_name
+                        114     BINARY_SUBSCR                   
+                        116     CALL_METHOD                     2
+                        118     STORE_FAST                      4: newpath
+                        120     JUMP_ABSOLUTE                   26
+                        122     LOAD_FAST                       4: newpath
+                        124     RETURN_VALUE                    
+                'WindowsAgent.replace_path_variables'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: process_file_mapping
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 9
+                    Stack Size: 11
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'api_host'
+                        'api_port'
+                        'replace_path_variables'
+                        'requests'
+                        'get'
+                        'request_timeout'
+                        'raise_for_status'
+                        'open'
+                        'iter_content'
+                        'write'
+                        'logger'
+                        'debug'
+                        'Exception'
+                        'error'
+                    [Var Names]
+                        'self'
+                        'file_map'
+                        'user_name'
+                        'local_filename'
+                        'url'
+                        'r'
+                        'f'
+                        'chunk'
+                        'ex'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'https://'
+                        ':'
+                        '/api/admin/get_file_mapping_contents?token='
+                        'jwt_token'
+                        'destination'
+                        True
+                        False
+                        (
+                            'stream'
+                            'verify'
+                            'timeout'
+                        )
+                        'wb'
+                        8192
+                        (
+                            'chunk_size'
+                        )
+                        'File written to ('
+                        ') for file mapping for user ('
+                        ').'
+                        'Failed to download and write file mapping to file ('
+                        ') for user ('
+                        '): '
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_ATTR                       0: api_host
+                        4       POP_JUMP_IF_FALSE               242
+                        6       LOAD_CONST                      0: None
+                        8       STORE_FAST                      3: local_filename
+                        10      SETUP_FINALLY                   166 (to 178)
+                        12      LOAD_CONST                      1: 'https://'
+                        14      LOAD_FAST                       0: self
+                        16      LOAD_ATTR                       0: api_host
+                        18      FORMAT_VALUE                    0
+                        20      LOAD_CONST                      2: ':'
+                        22      LOAD_FAST                       0: self
+                        24      LOAD_ATTR                       1: api_port
+                        26      FORMAT_VALUE                    0
+                        28      LOAD_CONST                      3: '/api/admin/get_file_mapping_contents?token='
+                        30      LOAD_FAST                       1: file_map
+                        32      LOAD_CONST                      4: 'jwt_token'
+                        34      BINARY_SUBSCR                   
+                        36      FORMAT_VALUE                    0
+                        38      BUILD_STRING                    6
+                        40      STORE_FAST                      4: url
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_METHOD                     2: replace_path_variables
+                        46      LOAD_FAST                       1: file_map
+                        48      LOAD_CONST                      5: 'destination'
+                        50      BINARY_SUBSCR                   
+                        52      LOAD_FAST                       2: user_name
+                        54      CALL_METHOD                     2
+                        56      STORE_FAST                      3: local_filename
+                        58      LOAD_GLOBAL                     3: requests
+                        60      LOAD_ATTR                       4: get
+                        62      LOAD_FAST                       4: url
+                        64      LOAD_CONST                      6: True
+                        66      LOAD_CONST                      7: False
+                        68      LOAD_FAST                       0: self
+                        70      LOAD_ATTR                       5: request_timeout
+                        72      LOAD_CONST                      8: ('stream', 'verify', 'timeout')
+                        74      CALL_FUNCTION_KW                4
+                        76      SETUP_WITH                      90 (to 168)
+                        78      STORE_FAST                      5: r
+                        80      LOAD_FAST                       5: r
+                        82      LOAD_METHOD                     6: raise_for_status
+                        84      CALL_METHOD                     0
+                        86      POP_TOP                         
+                        88      LOAD_GLOBAL                     7: open
+                        90      LOAD_FAST                       3: local_filename
+                        92      LOAD_CONST                      9: 'wb'
+                        94      CALL_FUNCTION                   2
+                        96      SETUP_WITH                      34 (to 132)
+                        98      STORE_FAST                      6: f
+                        100     LOAD_FAST                       5: r
+                        102     LOAD_ATTR                       8: iter_content
+                        104     LOAD_CONST                      10: 8192
+                        106     LOAD_CONST                      11: ('chunk_size',)
+                        108     CALL_FUNCTION_KW                1
+                        110     GET_ITER                        
+                        112     FOR_ITER                        14 (to 128)
+                        114     STORE_FAST                      7: chunk
+                        116     LOAD_FAST                       6: f
+                        118     LOAD_METHOD                     9: write
+                        120     LOAD_FAST                       7: chunk
+                        122     CALL_METHOD                     1
+                        124     POP_TOP                         
+                        126     JUMP_ABSOLUTE                   112
+                        128     POP_BLOCK                       
+                        130     BEGIN_FINALLY                   
+                        132     WITH_CLEANUP_START              
+                        134     WITH_CLEANUP_FINISH             
+                        136     END_FINALLY                     
+                        138     LOAD_FAST                       0: self
+                        140     LOAD_ATTR                       10: logger
+                        142     LOAD_METHOD                     11: debug
+                        144     LOAD_CONST                      12: 'File written to ('
+                        146     LOAD_FAST                       3: local_filename
+                        148     FORMAT_VALUE                    0
+                        150     LOAD_CONST                      13: ') for file mapping for user ('
+                        152     LOAD_FAST                       2: user_name
+                        154     FORMAT_VALUE                    0
+                        156     LOAD_CONST                      14: ').'
+                        158     BUILD_STRING                    5
+                        160     CALL_METHOD                     1
+                        162     POP_TOP                         
+                        164     POP_BLOCK                       
+                        166     BEGIN_FINALLY                   
+                        168     WITH_CLEANUP_START              
+                        170     WITH_CLEANUP_FINISH             
+                        172     END_FINALLY                     
+                        174     POP_BLOCK                       
+                        176     JUMP_FORWARD                    64 (to 242)
+                        178     DUP_TOP                         
+                        180     LOAD_GLOBAL                     12: Exception
+                        182     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        184     POP_JUMP_IF_FALSE               240
+                        186     POP_TOP                         
+                        188     STORE_FAST                      8: ex
+                        190     POP_TOP                         
+                        192     SETUP_FINALLY                   34 (to 228)
+                        194     LOAD_FAST                       0: self
+                        196     LOAD_ATTR                       10: logger
+                        198     LOAD_METHOD                     13: error
+                        200     LOAD_CONST                      15: 'Failed to download and write file mapping to file ('
+                        202     LOAD_FAST                       3: local_filename
+                        204     FORMAT_VALUE                    0
+                        206     LOAD_CONST                      16: ') for user ('
+                        208     LOAD_FAST                       2: user_name
+                        210     FORMAT_VALUE                    0
+                        212     LOAD_CONST                      17: '): '
+                        214     LOAD_FAST                       8: ex
+                        216     FORMAT_VALUE                    0
+                        218     BUILD_STRING                    6
+                        220     CALL_METHOD                     1
+                        222     POP_TOP                         
+                        224     POP_BLOCK                       
+                        226     BEGIN_FINALLY                   
+                        228     LOAD_CONST                      0: None
+                        230     STORE_FAST                      8: ex
+                        232     DELETE_FAST                     8: ex
+                        234     END_FINALLY                     
+                        236     POP_EXCEPT                      
+                        238     JUMP_FORWARD                    2 (to 242)
+                        240     END_FINALLY                     
+                        242     LOAD_CONST                      0: None
+                        244     RETURN_VALUE                    
+                'WindowsAgent.process_file_mapping'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: execute_script
+                    Arg Count: 3
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 17
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'os'
+                        'path'
+                        'isfile'
+                        'basename'
+                        'script_path'
+                        'uuid'
+                        'uuid4'
+                        'hex'
+                        'remove'
+                        'open'
+                        'items'
+                        'base64'
+                        'b64encode'
+                        'bytes'
+                        'str'
+                        'decode'
+                        'write'
+                        'writelines'
+                        'readlines'
+                        'logger'
+                        'debug'
+                        'subprocess'
+                        'Popen'
+                        'PIPE'
+                        'communicate'
+                        'returncode'
+                        'splitlines'
+                        'warning'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                        'error'
+                    [Var Names]
+                        'self'
+                        'file_path'
+                        'variables'
+                        'filename'
+                        'tmp_filename'
+                        'f'
+                        'k'
+                        'v'
+                        'b64_v'
+                        'f_source'
+                        'p'
+                        'p_out'
+                        'p_err'
+                        'output'
+                        'line'
+                        'ex'
+                        'tb'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        '\\tmp\\'
+                        '_'
+                        'w'
+                        'utf-8'
+                        '$'
+                        " = [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('"
+                        "'))\r\n"
+                        'r'
+                        'Executing script '
+                        'powershell.exe -ExecutionPolicy RemoteSigned -file "'
+                        '"'
+                        (
+                            'stdout'
+                        )
+                        'Script '
+                        ' completed with exit code '
+                        '\n'
+                        'Script Output: \n'
+                        '\t'
+                        'Error Output: \n'
+                        0
+                        'Failure during scirpt execution: '
+                        'The target script ('
+                        ') does not exist.'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: os
+                        2       LOAD_ATTR                       1: path
+                        4       LOAD_METHOD                     2: isfile
+                        6       LOAD_FAST                       1: file_path
+                        8       CALL_METHOD                     1
+                        10      POP_JUMP_IF_FALSE               536
+                        14      LOAD_GLOBAL                     0: os
+                        16      LOAD_ATTR                       1: path
+                        18      LOAD_METHOD                     3: basename
+                        20      LOAD_FAST                       1: file_path
+                        22      CALL_METHOD                     1
+                        24      STORE_FAST                      3: filename
+                        26      LOAD_FAST                       0: self
+                        28      LOAD_ATTR                       4: script_path
+                        30      FORMAT_VALUE                    0
+                        32      LOAD_CONST                      1: '\\tmp\\'
+                        34      LOAD_GLOBAL                     5: uuid
+                        36      LOAD_METHOD                     6: uuid4
+                        38      CALL_METHOD                     0
+                        40      LOAD_ATTR                       7: hex
+                        42      FORMAT_VALUE                    0
+                        44      LOAD_CONST                      2: '_'
+                        46      LOAD_FAST                       3: filename
+                        48      FORMAT_VALUE                    0
+                        50      BUILD_STRING                    5
+                        52      STORE_FAST                      4: tmp_filename
+                        54      SETUP_FINALLY                   450 (to 508)
+                        58      SETUP_FINALLY                   380 (to 442)
+                        62      LOAD_GLOBAL                     0: os
+                        64      LOAD_ATTR                       1: path
+                        66      LOAD_METHOD                     2: isfile
+                        68      LOAD_FAST                       4: tmp_filename
+                        70      CALL_METHOD                     1
+                        72      POP_JUMP_IF_FALSE               84
+                        74      LOAD_GLOBAL                     0: os
+                        76      LOAD_METHOD                     8: remove
+                        78      LOAD_FAST                       4: tmp_filename
+                        80      CALL_METHOD                     1
+                        82      POP_TOP                         
+                        84      LOAD_GLOBAL                     9: open
+                        86      LOAD_FAST                       4: tmp_filename
+                        88      LOAD_CONST                      3: 'w'
+                        90      CALL_FUNCTION                   2
+                        92      SETUP_WITH                      110 (to 204)
+                        94      STORE_FAST                      5: f
+                        96      LOAD_FAST                       2: variables
+                        98      LOAD_METHOD                     10: items
+                        100     CALL_METHOD                     0
+                        102     GET_ITER                        
+                        104     FOR_ITER                        58 (to 164)
+                        106     UNPACK_SEQUENCE                 2
+                        108     STORE_FAST                      6: k
+                        110     STORE_FAST                      7: v
+                        112     LOAD_GLOBAL                     11: base64
+                        114     LOAD_METHOD                     12: b64encode
+                        116     LOAD_GLOBAL                     13: bytes
+                        118     LOAD_GLOBAL                     14: str
+                        120     LOAD_FAST                       7: v
+                        122     CALL_FUNCTION                   1
+                        124     LOAD_CONST                      4: 'utf-8'
+                        126     CALL_FUNCTION                   2
+                        128     CALL_METHOD                     1
+                        130     LOAD_METHOD                     15: decode
+                        132     LOAD_CONST                      4: 'utf-8'
+                        134     CALL_METHOD                     1
+                        136     STORE_FAST                      8: b64_v
+                        138     LOAD_FAST                       5: f
+                        140     LOAD_METHOD                     16: write
+                        142     LOAD_CONST                      5: '$'
+                        144     LOAD_FAST                       6: k
+                        146     FORMAT_VALUE                    0
+                        148     LOAD_CONST                      6: " = [Text.Encoding]::Utf8.GetString([Convert]::FromBase64String('"
+                        150     LOAD_FAST                       8: b64_v
+                        152     FORMAT_VALUE                    0
+                        154     LOAD_CONST                      7: "'))\r\n"
+                        156     BUILD_STRING                    5
+                        158     CALL_METHOD                     1
+                        160     POP_TOP                         
+                        162     JUMP_ABSOLUTE                   104
+                        164     LOAD_GLOBAL                     9: open
+                        166     LOAD_FAST                       1: file_path
+                        168     LOAD_CONST                      8: 'r'
+                        170     CALL_FUNCTION                   2
+                        172     SETUP_WITH                      20 (to 194)
+                        174     STORE_FAST                      9: f_source
+                        176     LOAD_FAST                       5: f
+                        178     LOAD_METHOD                     17: writelines
+                        180     LOAD_FAST                       9: f_source
+                        182     LOAD_METHOD                     18: readlines
+                        184     CALL_METHOD                     0
+                        186     CALL_METHOD                     1
+                        188     POP_TOP                         
+                        190     POP_BLOCK                       
+                        192     BEGIN_FINALLY                   
+                        194     WITH_CLEANUP_START              
+                        196     WITH_CLEANUP_FINISH             
+                        198     END_FINALLY                     
+                        200     POP_BLOCK                       
+                        202     BEGIN_FINALLY                   
+                        204     WITH_CLEANUP_START              
+                        206     WITH_CLEANUP_FINISH             
+                        208     END_FINALLY                     
+                        210     LOAD_FAST                       0: self
+                        212     LOAD_ATTR                       19: logger
+                        214     LOAD_METHOD                     20: debug
+                        216     LOAD_CONST                      9: 'Executing script '
+                        218     LOAD_FAST                       4: tmp_filename
+                        220     FORMAT_VALUE                    0
+                        222     BUILD_STRING                    2
+                        224     CALL_METHOD                     1
+                        226     POP_TOP                         
+                        228     LOAD_GLOBAL                     21: subprocess
+                        230     LOAD_ATTR                       22: Popen
+                        232     LOAD_CONST                      10: 'powershell.exe -ExecutionPolicy RemoteSigned -file "'
+                        234     LOAD_FAST                       4: tmp_filename
+                        236     FORMAT_VALUE                    0
+                        238     LOAD_CONST                      11: '"'
+                        240     BUILD_STRING                    3
+                        242     LOAD_GLOBAL                     21: subprocess
+                        244     LOAD_ATTR                       23: PIPE
+                        246     LOAD_CONST                      12: ('stdout',)
+                        248     CALL_FUNCTION_KW                2
+                        250     STORE_FAST                      10: p
+                        252     LOAD_FAST                       10: p
+                        254     LOAD_METHOD                     24: communicate
+                        256     CALL_METHOD                     0
+                        258     UNPACK_SEQUENCE                 2
+                        260     STORE_FAST                      11: p_out
+                        262     STORE_FAST                      12: p_err
+                        264     LOAD_CONST                      13: 'Script '
+                        266     LOAD_FAST                       1: file_path
+                        268     FORMAT_VALUE                    0
+                        270     LOAD_CONST                      14: ' completed with exit code '
+                        272     LOAD_FAST                       10: p
+                        274     LOAD_ATTR                       25: returncode
+                        276     FORMAT_VALUE                    0
+                        278     LOAD_CONST                      15: '\n'
+                        280     BUILD_STRING                    5
+                        282     STORE_FAST                      13: output
+                        284     LOAD_FAST                       11: p_out
+                        286     POP_JUMP_IF_FALSE               336
+                        290     LOAD_FAST                       13: output
+                        292     LOAD_CONST                      16: 'Script Output: \n'
+                        294     INPLACE_ADD                     
+                        296     STORE_FAST                      13: output
+                        298     LOAD_FAST                       11: p_out
+                        300     LOAD_METHOD                     26: splitlines
+                        302     CALL_METHOD                     0
+                        304     GET_ITER                        
+                        306     FOR_ITER                        28 (to 336)
+                        308     STORE_FAST                      14: line
+                        310     LOAD_FAST                       13: output
+                        312     LOAD_CONST                      17: '\t'
+                        314     LOAD_FAST                       14: line
+                        316     LOAD_METHOD                     15: decode
+                        318     LOAD_CONST                      4: 'utf-8'
+                        320     CALL_METHOD                     1
+                        322     FORMAT_VALUE                    0
+                        324     LOAD_CONST                      15: '\n'
+                        326     BUILD_STRING                    3
+                        328     INPLACE_ADD                     
+                        330     STORE_FAST                      13: output
+                        332     JUMP_ABSOLUTE                   306
+                        336     LOAD_FAST                       12: p_err
+                        338     POP_JUMP_IF_FALSE               388
+                        342     LOAD_FAST                       13: output
+                        344     LOAD_CONST                      18: 'Error Output: \n'
+                        346     INPLACE_ADD                     
+                        348     STORE_FAST                      13: output
+                        350     LOAD_FAST                       12: p_err
+                        352     LOAD_METHOD                     26: splitlines
+                        354     CALL_METHOD                     0
+                        356     GET_ITER                        
+                        358     FOR_ITER                        28 (to 388)
+                        360     STORE_FAST                      14: line
+                        362     LOAD_FAST                       13: output
+                        364     LOAD_CONST                      17: '\t'
+                        366     LOAD_FAST                       14: line
+                        368     LOAD_METHOD                     15: decode
+                        370     LOAD_CONST                      4: 'utf-8'
+                        372     CALL_METHOD                     1
+                        374     FORMAT_VALUE                    0
+                        376     LOAD_CONST                      15: '\n'
+                        378     BUILD_STRING                    3
+                        380     INPLACE_ADD                     
+                        382     STORE_FAST                      13: output
+                        384     JUMP_ABSOLUTE                   358
+                        388     LOAD_FAST                       10: p
+                        390     LOAD_ATTR                       25: returncode
+                        392     LOAD_CONST                      19: 0
+                        394     COMPARE_OP                      2 (==)
+                        396     POP_JUMP_IF_FALSE               420
+                        400     LOAD_FAST                       13: output
+                        402     POP_JUMP_IF_FALSE               420
+                        406     LOAD_FAST                       0: self
+                        408     LOAD_ATTR                       19: logger
+                        410     LOAD_METHOD                     20: debug
+                        412     LOAD_FAST                       13: output
+                        414     CALL_METHOD                     1
+                        416     POP_TOP                         
+                        418     JUMP_FORWARD                    18 (to 438)
+                        420     LOAD_FAST                       13: output
+                        422     POP_JUMP_IF_FALSE               438
+                        426     LOAD_FAST                       0: self
+                        428     LOAD_ATTR                       19: logger
+                        430     LOAD_METHOD                     27: warning
+                        432     LOAD_FAST                       13: output
+                        434     CALL_METHOD                     1
+                        436     POP_TOP                         
+                        438     POP_BLOCK                       
+                        440     JUMP_FORWARD                    62 (to 504)
+                        442     DUP_TOP                         
+                        444     LOAD_GLOBAL                     28: Exception
+                        446     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        448     POP_JUMP_IF_FALSE               502
+                        452     POP_TOP                         
+                        454     STORE_FAST                      15: ex
+                        456     POP_TOP                         
+                        458     SETUP_FINALLY                   30 (to 490)
+                        460     LOAD_GLOBAL                     29: traceback
+                        462     LOAD_METHOD                     30: format_exc
+                        464     CALL_METHOD                     0
+                        466     STORE_FAST                      16: tb
+                        468     LOAD_FAST                       0: self
+                        470     LOAD_ATTR                       19: logger
+                        472     LOAD_METHOD                     31: error
+                        474     LOAD_CONST                      20: 'Failure during scirpt execution: '
+                        476     LOAD_FAST                       16: tb
+                        478     FORMAT_VALUE                    0
+                        480     BUILD_STRING                    2
+                        482     CALL_METHOD                     1
+                        484     POP_TOP                         
+                        486     POP_BLOCK                       
+                        488     BEGIN_FINALLY                   
+                        490     LOAD_CONST                      0: None
+                        492     STORE_FAST                      15: ex
+                        494     DELETE_FAST                     15: ex
+                        496     END_FINALLY                     
+                        498     POP_EXCEPT                      
+                        500     JUMP_FORWARD                    2 (to 504)
+                        502     END_FINALLY                     
+                        504     POP_BLOCK                       
+                        506     BEGIN_FINALLY                   
+                        508     LOAD_GLOBAL                     0: os
+                        510     LOAD_ATTR                       1: path
+                        512     LOAD_METHOD                     2: isfile
+                        514     LOAD_FAST                       4: tmp_filename
+                        516     CALL_METHOD                     1
+                        518     POP_JUMP_IF_FALSE               532
+                        522     LOAD_GLOBAL                     0: os
+                        524     LOAD_METHOD                     8: remove
+                        526     LOAD_FAST                       4: tmp_filename
+                        528     CALL_METHOD                     1
+                        530     POP_TOP                         
+                        532     END_FINALLY                     
+                        534     JUMP_FORWARD                    20 (to 556)
+                        536     LOAD_FAST                       0: self
+                        538     LOAD_ATTR                       19: logger
+                        540     LOAD_METHOD                     31: error
+                        542     LOAD_CONST                      21: 'The target script ('
+                        544     LOAD_FAST                       1: file_path
+                        546     FORMAT_VALUE                    0
+                        548     LOAD_CONST                      22: ') does not exist.'
+                        550     BUILD_STRING                    3
+                        552     CALL_METHOD                     1
+                        554     POP_TOP                         
+                        556     LOAD_CONST                      0: None
+                        558     RETURN_VALUE                    
+                'WindowsAgent.execute_script'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: screenshot
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 5
+                    Stack Size: 10
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'get_user_profile_dir'
+                        'os'
+                        'path'
+                        'isdir'
+                        'join'
+                        'logger'
+                        'debug'
+                        'launch_application_as_user'
+                        'getcwd'
+                        'Exception'
+                        'warning'
+                        'str'
+                        'isfile'
+                    [Var Names]
+                        'self'
+                        'user_name'
+                        'screenshot_dir'
+                        'screenshot_path'
+                        'e'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        'kasm_screenshot.png'
+                        'Saving screenshot for %s at %s'
+                        'screenshot.exe'
+                        '"%s"'
+                        '%s. Serving last saved screenshot instead.'
+                    [Disassembly]
+                        0       LOAD_FAST                       0: self
+                        2       LOAD_METHOD                     0: get_user_profile_dir
+                        4       LOAD_FAST                       1: user_name
+                        6       CALL_METHOD                     1
+                        8       STORE_FAST                      2: screenshot_dir
+                        10      LOAD_GLOBAL                     1: os
+                        12      LOAD_ATTR                       2: path
+                        14      LOAD_METHOD                     3: isdir
+                        16      LOAD_FAST                       2: screenshot_dir
+                        18      CALL_METHOD                     1
+                        20      POP_JUMP_IF_TRUE                26
+                        22      LOAD_CONST                      0: None
+                        24      RETURN_VALUE                    
+                        26      LOAD_GLOBAL                     1: os
+                        28      LOAD_ATTR                       2: path
+                        30      LOAD_METHOD                     4: join
+                        32      LOAD_FAST                       2: screenshot_dir
+                        34      LOAD_CONST                      1: 'kasm_screenshot.png'
+                        36      CALL_METHOD                     2
+                        38      STORE_FAST                      3: screenshot_path
+                        40      SETUP_FINALLY                   56 (to 98)
+                        42      LOAD_FAST                       0: self
+                        44      LOAD_ATTR                       5: logger
+                        46      LOAD_METHOD                     6: debug
+                        48      LOAD_CONST                      2: 'Saving screenshot for %s at %s'
+                        50      LOAD_FAST                       1: user_name
+                        52      LOAD_FAST                       3: screenshot_path
+                        54      BUILD_TUPLE                     2
+                        56      BINARY_MODULO                   
+                        58      CALL_METHOD                     1
+                        60      POP_TOP                         
+                        62      LOAD_FAST                       0: self
+                        64      LOAD_METHOD                     7: launch_application_as_user
+                        66      LOAD_FAST                       1: user_name
+                        68      LOAD_GLOBAL                     1: os
+                        70      LOAD_ATTR                       2: path
+                        72      LOAD_METHOD                     4: join
+                        74      LOAD_GLOBAL                     1: os
+                        76      LOAD_METHOD                     8: getcwd
+                        78      CALL_METHOD                     0
+                        80      LOAD_CONST                      3: 'screenshot.exe'
+                        82      CALL_METHOD                     2
+                        84      LOAD_CONST                      4: '"%s"'
+                        86      LOAD_FAST                       3: screenshot_path
+                        88      BINARY_MODULO                   
+                        90      CALL_METHOD                     3
+                        92      POP_TOP                         
+                        94      POP_BLOCK                       
+                        96      JUMP_FORWARD                    54 (to 152)
+                        98      DUP_TOP                         
+                        100     LOAD_GLOBAL                     9: Exception
+                        102     COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        104     POP_JUMP_IF_FALSE               150
+                        106     POP_TOP                         
+                        108     STORE_FAST                      4: e
+                        110     POP_TOP                         
+                        112     SETUP_FINALLY                   24 (to 138)
+                        114     LOAD_FAST                       0: self
+                        116     LOAD_ATTR                       5: logger
+                        118     LOAD_METHOD                     10: warning
+                        120     LOAD_CONST                      5: '%s. Serving last saved screenshot instead.'
+                        122     LOAD_GLOBAL                     11: str
+                        124     LOAD_FAST                       4: e
+                        126     CALL_FUNCTION                   1
+                        128     BINARY_MODULO                   
+                        130     CALL_METHOD                     1
+                        132     POP_TOP                         
+                        134     POP_BLOCK                       
+                        136     BEGIN_FINALLY                   
+                        138     LOAD_CONST                      0: None
+                        140     STORE_FAST                      4: e
+                        142     DELETE_FAST                     4: e
+                        144     END_FINALLY                     
+                        146     POP_EXCEPT                      
+                        148     JUMP_FORWARD                    2 (to 152)
+                        150     END_FINALLY                     
+                        152     LOAD_GLOBAL                     1: os
+                        154     LOAD_ATTR                       2: path
+                        156     LOAD_METHOD                     12: isfile
+                        158     LOAD_FAST                       3: screenshot_path
+                        160     CALL_METHOD                     1
+                        162     POP_JUMP_IF_FALSE               168
+                        164     LOAD_FAST                       3: screenshot_path
+                        166     RETURN_VALUE                    
+                        168     LOAD_CONST                      0: None
+                        170     RETURN_VALUE                    
+                        172     LOAD_CONST                      0: None
+                        174     RETURN_VALUE                    
+                'WindowsAgent.screenshot'
+                None
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: launch_application_as_user
+                    Arg Count: 4
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 15
+                    Stack Size: 14
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'win32ts'
+                        'WTSEnumerateSessions'
+                        'WTSQuerySessionInformation'
+                        'WTS_CURRENT_SERVER_HANDLE'
+                        'WTSUserName'
+                        'WTSQueryUserToken'
+                        'Exception'
+                        'traceback'
+                        'format_exc'
+                        'logger'
+                        'error'
+                        'win32security'
+                        'DuplicateTokenEx'
+                        'SecurityIdentification'
+                        'win32con'
+                        'MAXIMUM_ALLOWED'
+                        'TOKEN_QUERY'
+                        'TOKEN_DUPLICATE'
+                        'TokenPrimary'
+                        'win32process'
+                        'STARTUPINFO'
+                        'CreateProcessAsUser'
+                        'CREATE_NO_WINDOW'
+                        'win32event'
+                        'WaitForSingleObject'
+                        'INFINITE'
+                    [Var Names]
+                        'self'
+                        'user_name'
+                        'application_name'
+                        'application_args'
+                        'sessions'
+                        'session_user_token'
+                        'session'
+                        'session_user_name'
+                        'e'
+                        'tb'
+                        'process_token'
+                        'startup_info'
+                        'process_handle'
+                        '_'
+                        'pid'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        0
+                        1
+                        'State'
+                        'SessionId'
+                        'Exception occured launching applicaiton '
+                        ' as user '
+                        ': '
+                        '\n'
+                        "Failed to launch %s. No Windows user session found for '%s'"
+                        ' %s'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: win32ts
+                        2       LOAD_METHOD                     1: WTSEnumerateSessions
+                        4       LOAD_CONST                      1: 0
+                        6       LOAD_CONST                      2: 1
+                        8       LOAD_CONST                      1: 0
+                        10      CALL_METHOD                     3
+                        12      STORE_FAST                      4: sessions
+                        14      LOAD_CONST                      0: None
+                        16      STORE_FAST                      5: session_user_token
+                        18      LOAD_FAST                       4: sessions
+                        20      GET_ITER                        
+                        22      FOR_ITER                        158 (to 182)
+                        24      STORE_FAST                      6: session
+                        26      LOAD_FAST                       6: session
+                        28      LOAD_CONST                      3: 'State'
+                        30      BINARY_SUBSCR                   
+                        32      LOAD_CONST                      1: 0
+                        34      COMPARE_OP                      2 (==)
+                        36      POP_JUMP_IF_FALSE               22
+                        38      SETUP_FINALLY                   54 (to 94)
+                        40      LOAD_GLOBAL                     0: win32ts
+                        42      LOAD_METHOD                     2: WTSQuerySessionInformation
+                        44      LOAD_GLOBAL                     0: win32ts
+                        46      LOAD_ATTR                       3: WTS_CURRENT_SERVER_HANDLE
+                        48      LOAD_FAST                       6: session
+                        50      LOAD_CONST                      4: 'SessionId'
+                        52      BINARY_SUBSCR                   
+                        54      LOAD_GLOBAL                     0: win32ts
+                        56      LOAD_ATTR                       4: WTSUserName
+                        58      CALL_METHOD                     3
+                        60      STORE_FAST                      7: session_user_name
+                        62      LOAD_FAST                       7: session_user_name
+                        64      LOAD_FAST                       1: user_name
+                        66      COMPARE_OP                      2 (==)
+                        68      POP_JUMP_IF_FALSE               90
+                        70      LOAD_GLOBAL                     0: win32ts
+                        72      LOAD_METHOD                     5: WTSQueryUserToken
+                        74      LOAD_FAST                       6: session
+                        76      LOAD_CONST                      4: 'SessionId'
+                        78      BINARY_SUBSCR                   
+                        80      CALL_METHOD                     1
+                        82      STORE_FAST                      5: session_user_token
+                        84      POP_BLOCK                       
+                        86      POP_TOP                         
+                        88      JUMP_ABSOLUTE                   182
+                        90      POP_BLOCK                       
+                        92      JUMP_ABSOLUTE                   22
+                        94      DUP_TOP                         
+                        96      LOAD_GLOBAL                     6: Exception
+                        98      COMPARE_OP                      10 (<EXCEPTION MATCH>)
+                        100     POP_JUMP_IF_FALSE               178
+                        102     POP_TOP                         
+                        104     STORE_FAST                      8: e
+                        106     POP_TOP                         
+                        108     SETUP_FINALLY                   56 (to 166)
+                        110     LOAD_GLOBAL                     7: traceback
+                        112     LOAD_METHOD                     8: format_exc
+                        114     CALL_METHOD                     0
+                        116     STORE_FAST                      9: tb
+                        118     LOAD_FAST                       0: self
+                        120     LOAD_ATTR                       9: logger
+                        122     LOAD_METHOD                     10: error
+                        124     LOAD_CONST                      5: 'Exception occured launching applicaiton '
+                        126     LOAD_FAST                       2: application_name
+                        128     FORMAT_VALUE                    0
+                        130     LOAD_CONST                      6: ' as user '
+                        132     LOAD_FAST                       1: user_name
+                        134     FORMAT_VALUE                    0
+                        136     LOAD_CONST                      7: ': '
+                        138     LOAD_FAST                       8: e
+                        140     FORMAT_VALUE                    0
+                        142     LOAD_CONST                      8: '\n'
+                        144     LOAD_FAST                       9: tb
+                        146     FORMAT_VALUE                    0
+                        148     BUILD_STRING                    8
+                        150     CALL_METHOD                     1
+                        152     POP_TOP                         
+                        154     POP_BLOCK                       
+                        156     POP_EXCEPT                      
+                        158     CALL_FINALLY                    6 <INVALID>
+                        160     JUMP_ABSOLUTE                   22
+                        162     POP_BLOCK                       
+                        164     BEGIN_FINALLY                   
+                        166     LOAD_CONST                      0: None
+                        168     STORE_FAST                      8: e
+                        170     DELETE_FAST                     8: e
+                        172     END_FINALLY                     
+                        174     POP_EXCEPT                      
+                        176     JUMP_ABSOLUTE                   22
+                        178     END_FINALLY                     
+                        180     JUMP_ABSOLUTE                   22
+                        182     LOAD_FAST                       5: session_user_token
+                        184     POP_JUMP_IF_TRUE                202
+                        186     LOAD_GLOBAL                     6: Exception
+                        188     LOAD_CONST                      9: "Failed to launch %s. No Windows user session found for '%s'"
+                        190     LOAD_FAST                       2: application_name
+                        192     LOAD_FAST                       1: user_name
+                        194     BUILD_TUPLE                     2
+                        196     BINARY_MODULO                   
+                        198     CALL_FUNCTION                   1
+                        200     RAISE_VARARGS                   1
+                        202     LOAD_GLOBAL                     11: win32security
+                        204     LOAD_METHOD                     12: DuplicateTokenEx
+                        206     LOAD_FAST                       5: session_user_token
+                        208     LOAD_GLOBAL                     11: win32security
+                        210     LOAD_ATTR                       13: SecurityIdentification
+                        212     LOAD_GLOBAL                     14: win32con
+                        214     LOAD_ATTR                       15: MAXIMUM_ALLOWED
+                        216     LOAD_GLOBAL                     14: win32con
+                        218     LOAD_ATTR                       16: TOKEN_QUERY
+                        220     BINARY_OR                       
+                        222     LOAD_GLOBAL                     14: win32con
+                        224     LOAD_ATTR                       17: TOKEN_DUPLICATE
+                        226     BINARY_OR                       
+                        228     LOAD_GLOBAL                     11: win32security
+                        230     LOAD_ATTR                       18: TokenPrimary
+                        232     LOAD_CONST                      0: None
+                        234     CALL_METHOD                     5
+                        236     STORE_FAST                      10: process_token
+                        238     LOAD_GLOBAL                     19: win32process
+                        240     LOAD_METHOD                     20: STARTUPINFO
+                        242     CALL_METHOD                     0
+                        244     STORE_FAST                      11: startup_info
+                        246     LOAD_GLOBAL                     19: win32process
+                        248     LOAD_METHOD                     21: CreateProcessAsUser
+                        250     LOAD_FAST                       10: process_token
+                        252     LOAD_FAST                       2: application_name
+                        254     LOAD_FAST                       3: application_args
+                        256     POP_JUMP_IF_FALSE               268
+                        260     LOAD_CONST                      10: ' %s'
+                        262     LOAD_FAST                       3: application_args
+                        264     BINARY_MODULO                   
+                        266     JUMP_FORWARD                    2 (to 270)
+                        268     LOAD_CONST                      0: None
+                        270     LOAD_CONST                      0: None
+                        272     LOAD_CONST                      0: None
+                        274     LOAD_CONST                      1: 0
+                        276     LOAD_GLOBAL                     19: win32process
+                        278     LOAD_ATTR                       22: CREATE_NO_WINDOW
+                        280     LOAD_CONST                      0: None
+                        282     LOAD_CONST                      0: None
+                        284     LOAD_FAST                       11: startup_info
+                        286     CALL_METHOD                     10
+                        288     UNPACK_SEQUENCE                 4
+                        290     STORE_FAST                      12: process_handle
+                        292     STORE_FAST                      13: _
+                        294     STORE_FAST                      14: pid
+                        296     STORE_FAST                      13: _
+                        298     LOAD_GLOBAL                     23: win32event
+                        300     LOAD_METHOD                     24: WaitForSingleObject
+                        302     LOAD_FAST                       12: process_handle
+                        304     LOAD_GLOBAL                     23: win32event
+                        306     LOAD_ATTR                       25: INFINITE
+                        308     CALL_METHOD                     2
+                        310     POP_TOP                         
+                        312     LOAD_CONST                      0: None
+                        314     RETURN_VALUE                    
+                'WindowsAgent.launch_application_as_user'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: is_file_hidden
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 3
+                    Stack Size: 3
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'win32api'
+                        'GetFileAttributes'
+                        'win32con'
+                        'FILE_ATTRIBUTE_HIDDEN'
+                        'FILE_ATTRIBUTE_SYSTEM'
+                    [Var Names]
+                        'self'
+                        'path'
+                        'attributes'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: win32api
+                        2       LOAD_METHOD                     1: GetFileAttributes
+                        4       LOAD_FAST                       1: path
+                        6       CALL_METHOD                     1
+                        8       STORE_FAST                      2: attributes
+                        10      LOAD_FAST                       2: attributes
+                        12      LOAD_GLOBAL                     2: win32con
+                        14      LOAD_ATTR                       3: FILE_ATTRIBUTE_HIDDEN
+                        16      LOAD_GLOBAL                     2: win32con
+                        18      LOAD_ATTR                       4: FILE_ATTRIBUTE_SYSTEM
+                        20      BINARY_OR                       
+                        22      BINARY_AND                      
+                        24      RETURN_VALUE                    
+                'WindowsAgent.is_file_hidden'
+                [Code]
+                    File Name: agents\windows_agent.py
+                    Object Name: get_user_profile_dir
+                    Arg Count: 2
+                    Pos Only Arg Count: 0
+                    KW Only Arg Count: 0
+                    Locals: 6
+                    Stack Size: 5
+                    Flags: 0x00000043 (CO_OPTIMIZED | CO_NEWLOCALS | CO_NOFREE)
+                    [Names]
+                        'win32security'
+                        'LookupAccountName'
+                        'Exception'
+                        'ConvertSidToStringSid'
+                        'winreg'
+                        'OpenKey'
+                        'HKEY_LOCAL_MACHINE'
+                        'QueryValueEx'
+                        'REG_EXPAND_SZ'
+                    [Var Names]
+                        'self'
+                        'user_name'
+                        'sid'
+                        'key'
+                        'value'
+                        'value_type'
+                    [Free Vars]
+                    [Cell Vars]
+                    [Constants]
+                        None
+                        0
+                        'No user %s found'
+                        'SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList\\%s'
+                        'ProfileImagePath'
+                    [Disassembly]
+                        0       LOAD_GLOBAL                     0: win32security
+                        2       LOAD_METHOD                     1: LookupAccountName
+                        4       LOAD_CONST                      0: None
+                        6       LOAD_FAST                       1: user_name
+                        8       CALL_METHOD                     2
+                        10      LOAD_CONST                      1: 0
+                        12      BINARY_SUBSCR                   
+                        14      STORE_FAST                      2: sid
+                        16      LOAD_FAST                       2: sid
+                        18      LOAD_CONST                      0: None
+                        20      COMPARE_OP                      8 (is)
+                        22      POP_JUMP_IF_FALSE               36
+                        24      LOAD_GLOBAL                     2: Exception
+                        26      LOAD_CONST                      2: 'No user %s found'
+                        28      LOAD_FAST                       1: user_name
+                        30      BINARY_MODULO                   
+                        32      CALL_FUNCTION                   1
+                        34      RAISE_VARARGS                   1
+                        36      LOAD_GLOBAL                     0: win32security
+                        38      LOAD_METHOD                     3: ConvertSidToStringSid
+                        40      LOAD_FAST                       2: sid
+                        42      CALL_METHOD                     1
+                        44      STORE_FAST                      2: sid
+                        46      LOAD_GLOBAL                     4: winreg
+                        48      LOAD_METHOD                     5: OpenKey
+                        50      LOAD_GLOBAL                     4: winreg
+                        52      LOAD_ATTR                       6: HKEY_LOCAL_MACHINE
+                        54      LOAD_CONST                      3: 'SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion\\ProfileList\\%s'
+                        56      LOAD_FAST                       2: sid
+                        58      BINARY_MODULO                   
+                        60      CALL_METHOD                     2
+                        62      STORE_FAST                      3: key
+                        64      LOAD_GLOBAL                     4: winreg
+                        66      LOAD_METHOD                     7: QueryValueEx
+                        68      LOAD_FAST                       3: key
+                        70      LOAD_CONST                      4: 'ProfileImagePath'
+                        72      CALL_METHOD                     2
+                        74      UNPACK_SEQUENCE                 2
+                        76      STORE_FAST                      4: value
+                        78      STORE_FAST                      5: value_type
+                        80      LOAD_FAST                       5: value_type
+                        82      LOAD_GLOBAL                     4: winreg
+                        84      LOAD_ATTR                       8: REG_EXPAND_SZ
+                        86      COMPARE_OP                      2 (==)
+                        88      POP_JUMP_IF_FALSE               94
+                        90      LOAD_FAST                       4: value
+                        92      RETURN_VALUE                    
+                        94      LOAD_CONST                      0: None
+                        96      RETURN_VALUE                    
+                'WindowsAgent.get_user_profile_dir'
+                (
+                    None
+                )
+            [Disassembly]
+                0       LOAD_NAME                       0: __name__
+                2       STORE_NAME                      1: __module__
+                4       LOAD_CONST                      0: 'WindowsAgent'
+                6       STORE_NAME                      2: __qualname__
+                8       LOAD_CLOSURE                    0: __class__
+                10      BUILD_TUPLE                     1
+                12      LOAD_CONST                      1: <CODE> __init__
+                14      LOAD_CONST                      2: 'WindowsAgent.__init__'
+                16      MAKE_FUNCTION                   8
+                18      STORE_NAME                      3: __init__
+                20      LOAD_CONST                      3: <CODE> get_user_downloads_dir
+                22      LOAD_CONST                      4: 'WindowsAgent.get_user_downloads_dir'
+                24      MAKE_FUNCTION                   0
+                26      STORE_NAME                      4: get_user_downloads_dir
+                28      LOAD_CONST                      5: <CODE> replace_path_variables
+                30      LOAD_CONST                      6: 'WindowsAgent.replace_path_variables'
+                32      MAKE_FUNCTION                   0
+                34      STORE_NAME                      5: replace_path_variables
+                36      LOAD_CONST                      7: <CODE> process_file_mapping
+                38      LOAD_CONST                      8: 'WindowsAgent.process_file_mapping'
+                40      MAKE_FUNCTION                   0
+                42      STORE_NAME                      6: process_file_mapping
+                44      LOAD_CONST                      9: <CODE> execute_script
+                46      LOAD_CONST                      10: 'WindowsAgent.execute_script'
+                48      MAKE_FUNCTION                   0
+                50      STORE_NAME                      7: execute_script
+                52      LOAD_CONST                      11: <CODE> screenshot
+                54      LOAD_CONST                      12: 'WindowsAgent.screenshot'
+                56      MAKE_FUNCTION                   0
+                58      STORE_NAME                      8: screenshot
+                60      LOAD_CONST                      20: (None,)
+                62      LOAD_CONST                      14: <CODE> launch_application_as_user
+                64      LOAD_CONST                      15: 'WindowsAgent.launch_application_as_user'
+                66      MAKE_FUNCTION                   1
+                68      STORE_NAME                      9: launch_application_as_user
+                70      LOAD_CONST                      16: <CODE> is_file_hidden
+                72      LOAD_CONST                      17: 'WindowsAgent.is_file_hidden'
+                74      MAKE_FUNCTION                   0
+                76      STORE_NAME                      10: is_file_hidden
+                78      LOAD_CONST                      18: <CODE> get_user_profile_dir
+                80      LOAD_CONST                      19: 'WindowsAgent.get_user_profile_dir'
+                82      MAKE_FUNCTION                   0
+                84      STORE_NAME                      11: get_user_profile_dir
+                86      LOAD_CLOSURE                    0: __class__
+                88      DUP_TOP                         
+                90      STORE_NAME                      12: __classcell__
+                92      RETURN_VALUE                    
+        'WindowsAgent'
+    [Disassembly]
+        0       LOAD_CONST                      0: 0
+        2       LOAD_CONST                      1: None
+        4       IMPORT_NAME                     0: os
+        6       STORE_NAME                      0: os
+        8       LOAD_CONST                      0: 0
+        10      LOAD_CONST                      1: None
+        12      IMPORT_NAME                     1: yaml
+        14      STORE_NAME                      1: yaml
+        16      LOAD_CONST                      0: 0
+        18      LOAD_CONST                      1: None
+        20      IMPORT_NAME                     2: requests
+        22      STORE_NAME                      2: requests
+        24      LOAD_CONST                      0: 0
+        26      LOAD_CONST                      1: None
+        28      IMPORT_NAME                     3: traceback
+        30      STORE_NAME                      3: traceback
+        32      LOAD_CONST                      0: 0
+        34      LOAD_CONST                      1: None
+        36      IMPORT_NAME                     4: logging
+        38      STORE_NAME                      4: logging
+        40      LOAD_CONST                      0: 0
+        42      LOAD_CONST                      1: None
+        44      IMPORT_NAME                     5: subprocess
+        46      STORE_NAME                      5: subprocess
+        48      LOAD_CONST                      0: 0
+        50      LOAD_CONST                      1: None
+        52      IMPORT_NAME                     6: base64
+        54      STORE_NAME                      6: base64
+        56      LOAD_CONST                      0: 0
+        58      LOAD_CONST                      1: None
+        60      IMPORT_NAME                     7: uuid
+        62      STORE_NAME                      7: uuid
+        64      LOAD_CONST                      0: 0
+        66      LOAD_CONST                      1: None
+        68      IMPORT_NAME                     8: re
+        70      STORE_NAME                      8: re
+        72      LOAD_CONST                      0: 0
+        74      LOAD_CONST                      1: None
+        76      IMPORT_NAME                     9: win32con
+        78      STORE_NAME                      9: win32con
+        80      LOAD_CONST                      0: 0
+        82      LOAD_CONST                      1: None
+        84      IMPORT_NAME                     10: win32ts
+        86      STORE_NAME                      10: win32ts
+        88      LOAD_CONST                      0: 0
+        90      LOAD_CONST                      1: None
+        92      IMPORT_NAME                     11: win32security
+        94      STORE_NAME                      11: win32security
+        96      LOAD_CONST                      0: 0
+        98      LOAD_CONST                      1: None
+        100     IMPORT_NAME                     12: win32process
+        102     STORE_NAME                      12: win32process
+        104     LOAD_CONST                      0: 0
+        106     LOAD_CONST                      1: None
+        108     IMPORT_NAME                     13: win32event
+        110     STORE_NAME                      13: win32event
+        112     LOAD_CONST                      0: 0
+        114     LOAD_CONST                      1: None
+        116     IMPORT_NAME                     14: win32api
+        118     STORE_NAME                      14: win32api
+        120     LOAD_CONST                      0: 0
+        122     LOAD_CONST                      1: None
+        124     IMPORT_NAME                     15: win32profile
+        126     STORE_NAME                      15: win32profile
+        128     LOAD_CONST                      0: 0
+        130     LOAD_CONST                      1: None
+        132     IMPORT_NAME                     16: winreg
+        134     STORE_NAME                      16: winreg
+        136     LOAD_CONST                      2: 1
+        138     LOAD_CONST                      3: ('BaseAgent',)
+        140     IMPORT_NAME                     17: base
+        142     IMPORT_FROM                     18: BaseAgent
+        144     STORE_NAME                      18: BaseAgent
+        146     POP_TOP                         
+        148     LOAD_CONST                      0: 0
+        150     LOAD_CONST                      4: ('WindowsEventLogHandler',)
+        152     IMPORT_NAME                     19: windows_eventlog_handler
+        154     IMPORT_FROM                     20: WindowsEventLogHandler
+        156     STORE_NAME                      20: WindowsEventLogHandler
+        158     POP_TOP                         
+        160     LOAD_BUILD_CLASS                
+        162     LOAD_CONST                      5: <CODE> WindowsAgent
+        164     LOAD_CONST                      6: 'WindowsAgent'
+        166     MAKE_FUNCTION                   0
+        168     LOAD_CONST                      6: 'WindowsAgent'
+        170     LOAD_NAME                       18: BaseAgent
+        172     CALL_FUNCTION                   3
+        174     STORE_NAME                      21: WindowsAgent
+        176     LOAD_CONST                      1: None
+        178     RETURN_VALUE                    
