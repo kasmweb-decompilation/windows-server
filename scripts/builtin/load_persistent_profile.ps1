@@ -1,0 +1,2 @@
+#TODO: Complete this script, it is currently called and passed the storage mapping as a json string
+Write-Host "Persistent profiles currently unsupported, however, all the wiring is in place for this script to perform it."
