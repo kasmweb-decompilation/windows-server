@@ -162,7 +162,9 @@ class BaseAgent:
                                 ex = None
                                 del ex
 
-    def startupParse error at or near `RETURN_VALUE' instruction at offset 228
+    def startup():
+        # error at or near `RETURN_VALUE' instruction at offset 228
+        return None
 
     def session_start(self, session_details):
         variables = {'user_id':session_details["user_id"], 
