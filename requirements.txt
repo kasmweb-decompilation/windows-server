@@ -1,0 +1,5 @@
+flask
+screeninfo
+yaml
+psutil
+pypiwin32
