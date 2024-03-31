@@ -3,3 +3,4 @@ screeninfo
 yaml
 psutil
 pypiwin32
+pywin32
